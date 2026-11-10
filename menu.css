@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +11,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
 }
 
+/* Navigation Bar */
 .navbar {
     background-color: #581845;
     width: 100%;
@@ -51,53 +52,59 @@ body {
     border-bottom: 5px solid #ff0066;
 }
 
+/* Main Content */
 .content {
     text-align: center;
     padding: 32px 10px;
+    flex: 1;
 }
 
 .content h1 {
     font-family: "Times New Roman", serif;
     font-size: 42px;
     margin-bottom: 32px;
+    color: #581845;
 }
 
+/* Portfolio Grid */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 30px 35px;
+    grid-template-columns: repeat(4, 180px);
+    justify-content: center;
+    gap: 15px;
     padding: 0 10px;
 }
 
+/* Purple-Pink Grid Boxes */
 .project-link {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 100%;
-    min-height: 50px;
-    padding: 12px 10px;
-
-    background-color: #DDA0DD;
-    border: 2px solid #BA55D3;
+    width: 150px;
+    height: 50px;
+    justify-self: center;
+    box-sizing: border-box;
+    padding: 5px;
+    background: linear-gradient(135deg, #DDA0DD, #FFB6C1);
+    border: 2px solid #C77DCE;
     border-radius: 8px;
-
-    color: white;
+    color: #581845;
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
-
-    box-sizing: border-box;
     transition: 0.3s;
 }
 
 .project-link:hover {
-    background-color: #BA55D3;
+    background: linear-gradient(135deg, #A00096, #FF69B4);
     color: white;
+    transform: scale(1.05);
 }
 
- background-color: #F8EFF7;
+/* Footer */
+footer {
+    background-color: #F8EFF7;
     width: 100%;
     margin-top: auto;
 }
@@ -155,6 +162,7 @@ body {
     transform: scale(1.2);
 }
 
+/* Footer Bottom */
 .footer-bottom {
     background-color: #581845;
     color: white;
@@ -163,6 +171,7 @@ body {
     font-size: 14px;
 }
 
+/* Tablet Responsive */
 @media screen and (max-width: 800px) {
 
     .portfolio-grid {
@@ -175,9 +184,9 @@ body {
         text-align: center;
         gap: 25px;
     }
-
 }
 
+/* Mobile Responsive */
 @media screen and (max-width: 480px) {
 
     .portfolio-grid {
@@ -202,5 +211,4 @@ body {
     .footer-socials h2 {
         font-size: 20px;
     }
-
 }
