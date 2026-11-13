@@ -1,159 +1,61 @@
-/* CONTACT PAGE */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
 
-.contact-section {
-    width: 100%;
-    min-height: 75vh;
-    padding: 70px 8%;
-    background: linear-gradient(135deg, #fff7fc, #f3e5ff);
-}
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+    </nav>
 
-.contact-heading {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 45px;
-}
+    <!-- Contact Content -->
+    <section class="my-contact">
 
-.contact-heading .subtitle {
-    color: #c02691;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 4px;
-}
+        <div class="contact-title">
+            <h1>Let's <span>Connect!</span></h1>
+            <p>I'd love to hear from you. Feel free to visit my social media accounts!</p>
+        </div>
 
-.contact-heading h1 {
-    font-size: 48px;
-    color: #54145f;
-    margin: 12px 0;
-}
+        <div class="contact-card">
 
-.contact-heading h1 span {
-    color: #d633a6;
-}
+            <div class="contact-symbol">♡</div>
 
-.contact-heading p {
-    color: #705b75;
-    line-height: 1.8;
-    font-size: 15px;
-}
+            <h2>Get In Touch</h2>
 
-.contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    flex-wrap: wrap;
-}
+            <p>
+                Thank you for visiting my portfolio!
+                Stay connected with me through my social media accounts.
+            </p>
 
-.contact-card {
-    background: white;
-    width: 310px;
-    padding: 35px 25px;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(100, 30, 110, 0.10);
-    transition: 0.3s ease;
-    border-bottom: 4px solid #d633a6;
-}
+            <div class="contact-buttons">
+                <a href="https://www.facebook.com/profile.php?id=61576512509551"
+                   target="_blank">Facebook</a>
 
-.contact-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(100, 30, 110, 0.18);
-}
+                <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=cu0s8pt"
+                   target="_blank">Instagram</a>
+            </div>
 
-.contact-icon {
-    width: 65px;
-    height: 65px;
-    background: linear-gradient(135deg, #8e44ad, #e84393);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    margin: 0 auto 20px;
-}
+        </div>
 
-.contact-card h2 {
-    color: #641b75;
-    font-size: 21px;
-    margin-bottom: 12px;
-}
+    </section>
 
-.contact-card p {
-    color: #78677d;
-    line-height: 1.7;
-    font-size: 14px;
-}
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2026 EFN Corporation. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 22px;
-}
-
-.social-links a {
-    width: 43px;
-    height: 43px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    background: linear-gradient(135deg, #8e44ad, #e84393);
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-.social-links a:hover {
-    transform: scale(1.12);
-    background: #54145f;
-}
-
-.contact-message {
-    text-align: center;
-    margin-top: 55px;
-}
-
-.contact-message h2 {
-    color: #641b75;
-    font-size: 25px;
-    margin-bottom: 10px;
-}
-
-.contact-message p {
-    color: #78677d;
-    font-size: 14px;
-}
-
-.footer {
-    background: linear-gradient(90deg, #54145f, #a52c91);
-    width: 100%;
-    margin-top: auto;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 20px;
-    color: white;
-    font-size: 13px;
-}
-
-/* RESPONSIVE DESIGN */
-
-@media (max-width: 600px) {
-    .contact-section {
-        padding: 50px 5%;
-    }
-
-    .contact-heading h1 {
-        font-size: 36px;
-    }
-
-    .contact-card {
-        width: 100%;
-        max-width: 350px;
-    }
-}
+</body>
+</html>
