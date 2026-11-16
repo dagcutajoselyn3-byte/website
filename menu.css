@@ -55,112 +55,82 @@ body {
     border-bottom: 4px solid #ffc0e0;
 }
 
-/* CONTACT SECTION */
-.my-contact {
+/* MAIN CONTENT */
+.content {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 65px 20px;
-}
-
-/* CONTACT TITLE */
-.contact-title {
     text-align: center;
-    margin-bottom: 35px;
+    padding: 55px 25px 65px;
 }
 
-.contact-title h1 {
+.content h1 {
     font-size: 45px;
     font-weight: 800;
-    color: #ff80c0;
     margin-bottom: 15px;
+    color: #ff80c0;
     text-shadow: 0 0 15px rgba(255, 77, 166, 0.5);
 }
 
-.contact-title h1 span {
-    color: #d633a6;
+.content h1::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #a00096, #ff69b4);
+    margin: 15px auto 20px;
+    border-radius: 10px;
 }
 
-.contact-title p {
+/* PORTFOLIO DESCRIPTION */
+.portfolio-description {
     color: #e8cce2;
     font-size: 15px;
+    margin-bottom: 35px;
     line-height: 1.7;
 }
 
-/* CONTACT CARD */
-.contact-card {
+/* PORTFOLIO GRID LAYOUT */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 1150px;
     width: 100%;
-    max-width: 500px;
-    padding: 45px 35px;
-    text-align: center;
-    background: linear-gradient(145deg, #28133a, #481b4d);
-    border: 1px solid #b94c9c;
-    border-radius: 22px;
-    box-shadow: 0 10px 35px rgba(255, 0, 150, 0.15);
-    transition: 0.3s ease;
+    margin: 0 auto;
+    gap: 22px;
+    padding: 10px;
 }
 
-.contact-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 15px 35px rgba(255, 0, 150, 0.25);
-}
-
-/* HEART SYMBOL */
-.contact-symbol {
-    width: 75px;
-    height: 75px;
-    margin: 0 auto 20px;
+/* PROJECT CARDS */
+.project-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ff2995, #a00096);
-    border-radius: 50%;
-    font-size: 42px;
-    color: white;
-    box-shadow: 0 5px 20px rgba(255, 41, 149, 0.3);
-}
+    min-height: 100px;
+    padding: 20px 15px;
 
-/* CONTACT TEXT */
-.contact-card h2 {
-    color: #ff80c0;
-    font-size: 27px;
-    margin-bottom: 15px;
-}
+    background: linear-gradient(135deg, #38134e, #67265f);
+    border: 1px solid #b94c9c;
+    border-radius: 15px;
 
-.contact-card p {
-    color: #e8cce2;
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 28px;
-}
-
-/* SOCIAL MEDIA BUTTONS */
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.contact-buttons a {
-    display: inline-block;
-    padding: 13px 30px;
-    background: linear-gradient(135deg, #e6008a, #8e24aa);
-    border: 1px solid #ff80c0;
-    border-radius: 30px;
-    color: white;
+    color: #ffd6ee;
     text-decoration: none;
-    font-size: 15px;
+    text-align: center;
+
+    font-size: 14px;
     font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: 0.3s ease;
 }
 
-.contact-buttons a:hover {
-    background: #ff69b4;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 18px rgba(255, 41, 149, 0.3);
+/* PROJECT HOVER */
+.project-link:hover {
+    background: linear-gradient(135deg, #e6008a, #8e24aa);
+    color: white;
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(255, 0, 150, 0.3);
+    border-color: #ffb6df;
 }
 
 /* FOOTER */
@@ -171,6 +141,73 @@ body {
     border-top: 1px solid #813c78;
 }
 
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* FOOTER INFORMATION */
+.footer-info {
+    max-width: 550px;
+}
+
+.footer-info h2,
+.footer-socials h2 {
+    color: #ff80c0;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.footer-info p {
+    color: #e8cce2;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* SOCIAL MEDIA */
+.footer-socials {
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    background: #67265f;
+    border: 1px solid #ff69b4;
+    border-radius: 50%;
+
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ff2995;
+    transform: translateY(-5px);
+}
+
+/* FOOTER BOTTOM */
 .footer-bottom {
     background: #180b23;
     color: #e8cce2;
@@ -182,8 +219,14 @@ body {
 /* TABLET RESPONSIVE */
 @media screen and (max-width: 800px) {
 
-    .contact-title h1 {
-        font-size: 38px;
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
     }
 
 }
@@ -200,34 +243,37 @@ body {
         font-size: 13px;
     }
 
-    .my-contact {
-        padding: 45px 15px;
+    .content {
+        padding: 40px 12px;
     }
 
-    .contact-title h1 {
+    .content h1 {
         font-size: 32px;
     }
 
-    .contact-title p {
+    .portfolio-description {
         font-size: 13px;
     }
 
-    .contact-card {
-        padding: 35px 20px;
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 5px;
     }
 
-    .contact-card h2 {
-        font-size: 23px;
+    .project-link {
+        min-height: 75px;
+        font-size: 14px;
     }
 
-    .contact-buttons {
-        flex-direction: column;
+    .footer-container {
+        padding: 25px 15px;
     }
 
-    .contact-buttons a {
-        width: 100%;
+    .footer-info h2,
+    .footer-socials h2 {
+        font-size: 20px;
     }
 
 }
-
 
