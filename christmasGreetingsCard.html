@@ -1,323 +1,235 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Christmas Card</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
     background: skyblue;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Georgia, serif;
 }
 
-h1 {
-    color: white;
-    font-size: 42px;
-    margin-top: 35px;
-    text-shadow: 2px 2px #397b9b;
-}
-
-.scene {
-    position: relative;
-    width: 100%;
-    max-width: 750px;
-    height: 490px;
-    margin: 15px auto 0;
-    overflow: hidden;
-    background: linear-gradient(skyblue 70%, white 70%);
-}
-
-/* CHRISTMAS TREE */
-.tree {
-    position: absolute;
-    bottom: 80px;
-    left: 12%;
-    width: 190px;
-    height: 340px;
-}
-
-.top {
-    position: absolute;
-    top: 0;
-    left: 83px;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 55px solid #176b35;
-}
-
-.layer {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 85px solid transparent;
-    border-right: 85px solid transparent;
-    border-bottom: 120px solid #08752f;
-}
-
-.layer.one {
-    top: 35px;
-}
-
-.layer.two {
-    top: 95px;
-    border-left-width: 95px;
-    border-right-width: 95px;
-    border-bottom-width: 130px;
-    border-bottom-color: #075d28;
-}
-
-.layer.three {
-    top: 165px;
-    border-left-width: 110px;
-    border-right-width: 110px;
-    border-bottom-width: 135px;
-    border-bottom-color: #08752f;
-}
-
-.trunk {
-    position: absolute;
-    bottom: 0;
-    left: 75px;
-    width: 40px;
-    height: 65px;
-    background: #754321;
-}
-
-.star {
-    position: absolute;
-    top: -35px;
-    left: 75px;
-    font-size: 35px;
-    color: gold;
-}
-
-.ball {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #ffcf30;
-    box-shadow: 0 0 5px white;
-}
-
-.b1 { top: 100px; left: 75px; }
-.b2 { top: 145px; left: 120px; background: red; }
-.b3 { top: 195px; left: 45px; background: red; }
-.b4 { top: 225px; left: 145px; }
-.b5 { top: 260px; left: 85px; background: red; }
-
-/* SNOWMAN */
-.snowman {
-    position: absolute;
-    bottom: 78px;
-    right: 17%;
-    width: 150px;
-    height: 230px;
-}
-
-.head {
-    position: absolute;
-    top: 0;
-    left: 40px;
-    width: 75px;
-    height: 75px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: inset -7px -6px 10px #c9d9e2;
-}
-
-.body {
-    position: absolute;
-    bottom: 0;
-    left: 15px;
-    width: 125px;
-    height: 135px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: inset -10px -8px 15px #c9d9e2;
-}
-
-.eye {
-    position: absolute;
-    top: 25px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: black;
-    z-index: 2;
-}
-
-.eye.left { left: 58px; }
-.eye.right { left: 90px; }
-
-.nose {
-    position: absolute;
-    top: 38px;
-    left: 72px;
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-left: 23px solid orange;
-    z-index: 2;
-}
-
-.scarf {
-    position: absolute;
-    top: 75px;
-    left: 35px;
-    width: 90px;
-    height: 16px;
-    background: red;
-    border-radius: 8px;
-    z-index: 3;
-}
-
-.button {
-    position: absolute;
-    left: 72px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: black;
-    z-index: 3;
-}
-
-.button.one { top: 115px; }
-.button.two { top: 145px; }
-.button.three { top: 175px; }
-
-/* GIFTS */
-.gift {
-    position: absolute;
-    bottom: 80px;
-    left: 45%;
-    width: 65px;
-    height: 55px;
-    background: #d92535;
-}
-
-.gift::before {
-    content: "";
-    position: absolute;
-    left: 27px;
-    height: 55px;
-    width: 11px;
-    background: gold;
-}
-
-.gift::after {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: -5px;
-    width: 75px;
-    height: 14px;
-    background: #a91525;
-}
-
-.gift2 {
-    position: absolute;
-    bottom: 80px;
-    left: 55%;
-    width: 55px;
-    height: 45px;
-    background: #2875c7;
-}
-
-.gift2::before {
-    content: "";
-    position: absolute;
-    left: 22px;
-    height: 45px;
-    width: 10px;
-    background: gold;
-}
-
-.gift2::after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -4px;
-    width: 63px;
-    height: 12px;
-    background: #19569a;
-}
-
-@media(max-width: 500px) {
-    .tree {
-        left: 0;
-        transform: scale(.75);
-        transform-origin: bottom left;
-    }
-
-    .snowman {
-        right: 0;
-        transform: scale(.75);
-        transform-origin: bottom right;
-    }
-
-    .gift {
-        left: 38%;
-    }
-
-    .gift2 {
-        left: 55%;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
+canvas {
+    width: 600px;
+    max-width: 95%;
+    border: 5px solid white;
+    border-radius: 15px;
+    background: skyblue;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Merry Christmas!</h1>
+<canvas id="card" width="600" height="600"></canvas>
 
-<div class="scene">
+<script>
+const canvas = document.getElementById("card");
+const ctx = canvas.getContext("2d");
 
-    <div class="tree">
-        <div class="star">★</div>
-        <div class="top"></div>
-        <div class="layer one"></div>
-        <div class="layer two"></div>
-        <div class="layer three"></div>
-        <div class="trunk"></div>
+// Snow
+for (let i = 0; i < 80; i++) {
+    ctx.beginPath();
+    ctx.arc(Math.random() * 600, Math.random() * 600, 2, 0, Math.PI * 2);
+    ctx.fillStyle = "white";
+    ctx.fill();
+}
 
-        <div class="ball b1"></div>
-        <div class="ball b2"></div>
-        <div class="ball b3"></div>
-        <div class="ball b4"></div>
-        <div class="ball b5"></div>
-    </div>
+// Ground
+ctx.beginPath();
+ctx.moveTo(0, 500);
+ctx.lineTo(600, 500);
+ctx.lineTo(600, 600);
+ctx.lineTo(0, 600);
+ctx.closePath();
+ctx.fillStyle = "white";
+ctx.fill();
 
-    <div class="snowman">
-        <div class="body"></div>
-        <div class="head"></div>
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="nose"></div>
-        <div class="scarf"></div>
-        <div class="button one"></div>
-        <div class="button two"></div>
-        <div class="button three"></div>
-    </div>
+// Christmas Tree
+// Top
+ctx.beginPath();
+ctx.moveTo(220, 100);
+ctx.lineTo(170, 190);
+ctx.lineTo(270, 190);
+ctx.closePath();
+ctx.fillStyle = "green";
+ctx.fill();
 
-    <div class="gift"></div>
-    <div class="gift2"></div>
+// Middle
+ctx.beginPath();
+ctx.moveTo(220, 150);
+ctx.lineTo(140, 260);
+ctx.lineTo(300, 260);
+ctx.closePath();
+ctx.fillStyle = "darkgreen";
+ctx.fill();
 
-</div>
+// Bottom
+ctx.beginPath();
+ctx.moveTo(220, 210);
+ctx.lineTo(110, 340);
+ctx.lineTo(330, 340);
+ctx.closePath();
+ctx.fillStyle = "forestgreen";
+ctx.fill();
 
+// Tree trunk
+ctx.beginPath();
+ctx.moveTo(195, 340);
+ctx.lineTo(245, 340);
+ctx.lineTo(245, 410);
+ctx.lineTo(195, 410);
+ctx.closePath();
+ctx.fillStyle = "brown";
+ctx.fill();
+
+// Star
+ctx.beginPath();
+ctx.moveTo(220, 70);
+ctx.lineTo(235, 105);
+ctx.lineTo(270, 105);
+ctx.lineTo(242, 125);
+ctx.lineTo(252, 160);
+ctx.lineTo(220, 140);
+ctx.lineTo(188, 160);
+ctx.lineTo(198, 125);
+ctx.lineTo(170, 105);
+ctx.lineTo(205, 105);
+ctx.closePath();
+ctx.fillStyle = "gold";
+ctx.fill();
+
+// Tree ornaments
+let ornaments = [
+    [210, 180], [245, 210], [190, 230],
+    [265, 245], [215, 275], [165, 285],
+    [285, 300], [230, 320], [180, 315]
+];
+
+for (let i = 0; i < ornaments.length; i++) {
+    ctx.beginPath();
+    ctx.arc(ornaments[i][0], ornaments[i][1], 8, 0, Math.PI * 2);
+    ctx.fillStyle = ["red", "yellow", "pink", "blue"][i % 4];
+    ctx.fill();
+}
+
+// Snowman
+ctx.beginPath();
+ctx.arc(420, 450, 50, 0, Math.PI * 2);
+ctx.fillStyle = "white";
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(420, 375, 35, 0, Math.PI * 2);
+ctx.fillStyle = "white";
+ctx.fill();
+
+// Eyes
+ctx.beginPath();
+ctx.arc(410, 365, 4, 0, Math.PI * 2);
+ctx.arc(430, 365, 4, 0, Math.PI * 2);
+ctx.fillStyle = "black";
+ctx.fill();
+
+// Nose
+ctx.beginPath();
+ctx.moveTo(420, 375);
+ctx.lineTo(445, 380);
+ctx.lineTo(420, 385);
+ctx.closePath();
+ctx.fillStyle = "orange";
+ctx.fill();
+
+// Buttons
+ctx.beginPath();
+ctx.arc(420, 410, 5, 0, Math.PI * 2);
+ctx.arc(420, 430, 5, 0, Math.PI * 2);
+ctx.arc(420, 450, 5, 0, Math.PI * 2);
+ctx.fillStyle = "black";
+ctx.fill();
+
+// Snowman hat
+ctx.beginPath();
+ctx.moveTo(390, 340);
+ctx.lineTo(450, 340);
+ctx.lineTo(450, 350);
+ctx.lineTo(390, 350);
+ctx.closePath();
+ctx.fillStyle = "black";
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(400, 300);
+ctx.lineTo(440, 300);
+ctx.lineTo(440, 340);
+ctx.lineTo(400, 340);
+ctx.closePath();
+ctx.fillStyle = "black";
+ctx.fill();
+
+// Gift 1
+ctx.beginPath();
+ctx.moveTo(90, 420);
+ctx.lineTo(150, 420);
+ctx.lineTo(150, 480);
+ctx.lineTo(90, 480);
+ctx.closePath();
+ctx.fillStyle = "red";
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(115, 420);
+ctx.lineTo(125, 420);
+ctx.lineTo(125, 480);
+ctx.lineTo(115, 480);
+ctx.closePath();
+ctx.fillStyle = "gold";
+ctx.fill();
+
+// Gift 2
+ctx.beginPath();
+ctx.moveTo(270, 430);
+ctx.lineTo(330, 430);
+ctx.lineTo(330, 485);
+ctx.lineTo(270, 485);
+ctx.closePath();
+ctx.fillStyle = "purple";
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(295, 430);
+ctx.lineTo(305, 430);
+ctx.lineTo(305, 485);
+ctx.lineTo(295, 485);
+ctx.closePath();
+ctx.fillStyle = "yellow";
+ctx.fill();
+
+// Gift ribbons
+ctx.beginPath();
+ctx.moveTo(90, 440);
+ctx.lineTo(150, 440);
+ctx.moveTo(270, 450);
+ctx.lineTo(330, 450);
+ctx.strokeStyle = "gold";
+ctx.lineWidth = 5;
+ctx.stroke();
+
+// Christmas Greeting
+ctx.fillStyle = "darkblue";
+ctx.font = "bold 30px Georgia";
+ctx.textAlign = "center";
+ctx.fillText("Merry Christmas!", 300, 40);
+
+ctx.font = "18px Georgia";
+ctx.fillText("Wishing you love, joy and peace", 300, 570);
+
+</script>
 </body>
 </html>
