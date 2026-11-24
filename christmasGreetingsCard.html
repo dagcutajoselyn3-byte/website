@@ -98,56 +98,20 @@ ctx.beginPath();
 ctx.arc(230, 240, 8, 0, Math.PI * 2);
 ctx.fill();
 
-// Snowman
-ctx.fillStyle = "white";
-ctx.beginPath();
-ctx.arc(450, 290, 45, 0, Math.PI * 2);
-ctx.fill();
+// Christmas Greetings
+ctx.fillStyle = "red";
+ctx.font = "bold 20px Georgia";
+ctx.textAlign = "center";
+ctx.fillText("Merry Christmas!", 450, 200);
 
-ctx.beginPath();
-ctx.arc(450, 230, 30, 0, Math.PI * 2);
-ctx.fill();
+ctx.fillStyle = "darkgreen";
+ctx.font = "14px Georgia";
+ctx.fillText("May your days be filled", 450, 235);
+ctx.fillText("with joy and love.", 450, 255);
 
-ctx.beginPath();
-ctx.arc(450, 190, 22, 0, Math.PI * 2);
-ctx.fill();
-
-// Snowman eyes
-ctx.fillStyle = "black";
-ctx.beginPath();
-ctx.arc(443, 185, 3, 0, Math.PI * 2);
-ctx.fill();
-
-ctx.beginPath();
-ctx.arc(457, 185, 3, 0, Math.PI * 2);
-ctx.fill();
-
-// Snowman nose
-ctx.fillStyle = "orange";
-ctx.beginPath();
-ctx.moveTo(450, 190);
-ctx.lineTo(465, 195);
-ctx.lineTo(450, 198);
-ctx.closePath();
-ctx.fill();
-
-// Snowman hat
-ctx.fillStyle = "black";
-ctx.beginPath();
-ctx.moveTo(430, 170);
-ctx.lineTo(470, 170);
-ctx.lineTo(465, 145);
-ctx.lineTo(435, 145);
-ctx.closePath();
-ctx.fill();
-
-ctx.beginPath();
-ctx.moveTo(425, 170);
-ctx.lineTo(475, 170);
-ctx.lineTo(475, 177);
-ctx.lineTo(425, 177);
-ctx.closePath();
-ctx.fill();
+ctx.fillStyle = "red";
+ctx.font = "16px Georgia";
+ctx.fillText("Happy Holidays!", 450, 290);
 
 // Gift
 ctx.fillStyle = "red";
@@ -179,11 +143,11 @@ ctx.lineTo(150, 355);
 ctx.closePath();
 ctx.fill();
 
-// Greeting
-ctx.fillStyle = "red";
-ctx.font = "bold 30px Georgia";
+// Bottom message
+ctx.fillStyle = "darkgreen";
+ctx.font = "bold 16px Georgia";
 ctx.textAlign = "center";
-ctx.fillText("Merry Christmas!", 300, 375);
+ctx.fillText("Merry Christmas and Happy New Year!", 300, 385);
 
 </script>
 </body>
