@@ -307,4 +307,15 @@ body {
         font-size: 20px;
     }
 }
-
+/* FIX PICTURE SIZE SA CONTACT */
+.contact-section .contact-container .instagram-card img,
+.contact-section .contact-container .facebook-card img {
+    width: 70px !important;
+    height: 70px !important;
+    max-width: 70px !important;
+    min-width: 70px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block !important;
+    margin: 15px auto !important;
+}
