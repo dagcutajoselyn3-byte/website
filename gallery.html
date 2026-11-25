@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,141 @@
     <title>My Gallery</title>
 
     <link rel="stylesheet" href="menu.css">
+
+    <style>
+        /* GALLERY DESIGN */
+        body {
+            background: #120b1c;
+            color: white;
+        }
+
+        .gallery-header {
+            text-align: center;
+            padding: 50px 20px 20px;
+        }
+
+        .gallery-header h1 {
+            font-size: 38px;
+            color: #e7b8ff;
+            margin-bottom: 10px;
+        }
+
+        .gallery-header p {
+            color: #d1c2dd;
+        }
+
+        /* SLIDER CONTAINER */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px 60px;
+        }
+
+        .gallery-slider {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+        }
+
+        /* PICTURE */
+        .slider-image {
+            width: 100%;
+            max-width: 420px;
+            height: 380px;
+            object-fit: contain;
+            display: block;
+            margin: auto;
+            border-radius: 18px;
+            box-shadow: 0 0 25px rgba(190, 100, 255, 0.25);
+            transition: 0.4s ease;
+        }
+
+        /* ARROWS */
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .slider-btn {
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: #9b59b6;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .slider-btn:hover {
+            background: #d28cff;
+            transform: scale(1.1);
+        }
+
+        /* CAPTION */
+        .gallery-caption {
+            margin-top: 20px;
+        }
+
+        .gallery-caption h2 {
+            color: #e7b8ff;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-caption p {
+            color: #d1c2dd;
+            font-size: 15px;
+        }
+
+        /* DOTS */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #65516f;
+            cursor: pointer;
+            border: none;
+        }
+
+        .dot.active {
+            background: #d28cff;
+            transform: scale(1.3);
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 20px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .gallery-header h1 {
+                font-size: 30px;
+            }
+
+            .slider-image {
+                max-width: 320px;
+                height: 300px;
+            }
+
+            .slider-controls {
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -28,46 +164,39 @@
         <p>Every picture tells a story and keeps a beautiful memory.</p>
     </header>
 
-    <!-- GALLERY SECTION -->
+    <!-- IMAGE SLIDER -->
     <main class="gallery-container">
 
-        <div class="gallery-grid">
+        <div class="gallery-slider">
 
-            <!-- FUTURE ME -->
-            <div class="gallery-card">
-                <img src="Future me.jpg" alt="My Future Self">
-                <div class="gallery-caption">
-                    <h2>My Future Me</h2>
-                    <p>Dreaming big and working hard for my future.</p>
-                </div>
+            <img
+                id="sliderImage"
+                class="slider-image"
+                src="Future me.jpg"
+                alt="My Future Self"
+            >
+
+            <div class="slider-controls">
+
+                <button class="slider-btn" id="prevBtn" aria-label="Previous picture">
+                    &#10094;
+                </button>
+
+                <button class="slider-btn" id="nextBtn" aria-label="Next picture">
+                    &#10095;
+                </button>
+
             </div>
 
-            <!-- FAMILY -->
-            <div class="gallery-card">
-                <img src="Family.jpg" alt="My Family">
-                <div class="gallery-caption">
-                    <h2>My Family</h2>
-                    <p>My greatest inspiration and source of strength.</p>
-                </div>
+            <div class="gallery-caption">
+                <h2 id="sliderTitle">My Future Me</h2>
+                <p id="sliderDescription">
+                    Dreaming big and working hard for my future.
+                </p>
             </div>
 
-            <!-- FRIENDS -->
-            <div class="gallery-card">
-                <img src="Friend.jpg" alt="My Friends">
-                <div class="gallery-caption">
-                    <h2>My Friends</h2>
-                    <p>Beautiful memories and unforgettable moments.</p>
-                </div>
-            </div>
-
-            <!-- ME IN UNIFORM -->
-            <div class="gallery-card">
-                <img src="ME.jpg" alt="Me Wearing My School Uniform">
-                <div class="gallery-caption">
-                    <h2>Me in Uniform</h2>
-                    <p>A student with dreams, goals, and determination.</p>
-                </div>
-            </div>
+            <!-- SLIDER DOTS -->
+            <div class="slider-dots" id="sliderDots"></div>
 
         </div>
 
@@ -107,5 +236,104 @@
 
     </footer>
 
+    <!-- JAVASCRIPT SLIDER -->
+    <script>
+
+        const galleryPictures = [
+            {
+                image: "Future me.jpg",
+                title: "My Future Me",
+                description: "Dreaming big and working hard for my future."
+            },
+            {
+                image: "Family.jpg",
+                title: "My Family",
+                description: "My greatest inspiration and source of strength."
+            },
+            {
+                image: "Friend.jpg",
+                title: "My Friends",
+                description: "Beautiful memories and unforgettable moments."
+            },
+            {
+                image: "ME.jpg",
+                title: "Me in Uniform",
+                description: "A student with dreams, goals, and determination."
+            }
+        ];
+
+        let currentIndex = 0;
+
+        const sliderImage = document.getElementById("sliderImage");
+        const sliderTitle = document.getElementById("sliderTitle");
+        const sliderDescription = document.getElementById("sliderDescription");
+        const sliderDots = document.getElementById("sliderDots");
+
+        // DISPLAY PICTURE
+        function showPicture(index) {
+
+            currentIndex = index;
+
+            sliderImage.src = galleryPictures[currentIndex].image;
+            sliderTitle.textContent = galleryPictures[currentIndex].title;
+            sliderDescription.textContent = galleryPictures[currentIndex].description;
+
+            // UPDATE DOTS
+            sliderDots.innerHTML = "";
+
+            galleryPictures.forEach((picture, i) => {
+
+                const dot = document.createElement("button");
+
+                dot.className = "dot";
+
+                if (i === currentIndex) {
+                    dot.classList.add("active");
+                }
+
+                dot.setAttribute("aria-label", "Show picture " + (i + 1));
+
+                dot.onclick = function() {
+                    showPicture(i);
+                };
+
+                sliderDots.appendChild(dot);
+
+            });
+
+        }
+
+        // NEXT ARROW
+        document.getElementById("nextBtn").onclick = function() {
+
+            currentIndex++;
+
+            if (currentIndex >= galleryPictures.length) {
+                currentIndex = 0;
+            }
+
+            showPicture(currentIndex);
+
+        };
+
+        // PREVIOUS ARROW
+        document.getElementById("prevBtn").onclick = function() {
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = galleryPictures.length - 1;
+            }
+
+            showPicture(currentIndex);
+
+        };
+
+        // INITIAL PICTURE
+        showPicture(0);
+
+    </script>
+
 </body>
 </html>
+
