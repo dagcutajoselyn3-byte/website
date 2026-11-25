@@ -726,8 +726,73 @@ body {
 
     .welcome-card h2 {
         font-size: 21px;
-    }
-
+    /* CONTACT ONLY */
+.contact-section {
+    padding: 15px 5px;
+    text-align: center;
 }
 
+.contact-section h1 {
+    margin-bottom: 5px;
+}
+
+.contact-subtitle {
+    margin-bottom: 12px;
+}
+
+/* CARDS SIDE BY SIDE */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* SMALL CARDS */
+.instagram-card,
+.facebook-card {
+    width: 190px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+/* SQUARE PICTURES - SMALL LANG */
+.contact-section .profile-picture {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    display: block;
+    margin: 8px auto;
+    border-radius: 8px;
+}
+
+/* BUTTONS */
+.instagram-btn,
+.facebook-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 6px 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 500px) {
+    .contact-container {
+        gap: 8px;
+    }
+
+    .instagram-card,
+    .facebook-card {
+        width: 170px;
+    }
+
+    .contact-section .profile-picture {
+        width: 50px;
+        height: 50px;
+    }
+}
 
