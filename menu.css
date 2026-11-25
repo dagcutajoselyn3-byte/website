@@ -273,7 +273,117 @@ body {
     .footer-info h2,
     .footer-socials h2 {
         font-size: 20px;
+
+    /* CONTACT PAGE */
+.contact-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact-section h1 {
+    font-size: 40px;
+    color: #ff80c0;
+    margin-bottom: 15px;
+}
+
+.contact-subtitle {
+    color: #e8cce2;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-card {
+    background: linear-gradient(135deg, #38134e, #67265f);
+    border: 1px solid #b94c9c;
+    border-radius: 18px;
+    padding: 30px 25px;
+    width: 320px;
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 0, 150, 0.15);
+    transition: 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(255, 0, 150, 0.25);
+}
+
+.contact-card h2 {
+    color: #ff80c0;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #e8cce2;
+    margin: 12px 0;
+}
+
+.contact-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ff69b4;
+    margin: 20px 0;
+}
+
+.contact-card h3 {
+    color: #ffd6ee;
+    margin-bottom: 10px;
+}
+
+.contact-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.instagram-btn {
+    background: linear-gradient(45deg, #a00096, #ff2995);
+}
+
+.facebook-btn {
+    background: #1877f2;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+/* CONTACT RESPONSIVE */
+@media screen and (max-width: 600px) {
+
+    .contact-section {
+        padding: 35px 15px;
+    }
+
+    .contact-section h1 {
+        font-size: 32px;
+    }
+
+    .contact-container {
+        gap: 20px;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 320px;
     }
 
 }
-
