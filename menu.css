@@ -546,7 +546,14 @@ body {
     .footer-info h2,
     .footer-socials h2 {
         font-size: 20px;
-    }
-
+    /* SMALLER INSTAGRAM AND FACEBOOK PICTURES */
+.instagram-card img,
+.facebook-card img {
+    width: 120px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
 }
-(fixed  my contact)
