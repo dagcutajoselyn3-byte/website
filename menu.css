@@ -319,3 +319,59 @@ body {
     display: block !important;
     margin: 15px auto !important;
 }
+/* CONTACT SECTION */
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* MAGKATABI ANG FACEBOOK AT INSTAGRAM */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* CARD SIZE */
+.instagram-card,
+.facebook-card {
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* INSTAGRAM PICTURE */
+.contact-section .profile-picture {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    display: block !important;
+    margin: 15px auto !important;
+}
+
+/* INSTAGRAM BUTTON */
+.instagram-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #c13584;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* FACEBOOK BUTTON */
+.facebook-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #1877f2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
