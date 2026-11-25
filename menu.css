@@ -156,16 +156,14 @@ body {
     height: 160px;
 }
 
-/* INSTAGRAM AND FACEBOOK PICTURES */
+/* Paliitin ang Instagram at Facebook pictures */
 .instagram-card img,
 .facebook-card img {
-    width: 120px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     display: block;
     margin: 15px auto;
-    border-radius: 10px;
 }
 
 /* FOOTER */
