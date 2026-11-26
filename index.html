@@ -1,59 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Personal Website</title>
 
-    <title>Home - My Website</title>
+<link rel="stylesheet" href="menu.css">
 
-    <link rel="stylesheet" href="menu.css">
+<style>
+/* HOME PAGE */
+.home-page {
+    background: #fbf2fc;
+    color: #542044;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.home-header {
+    background: linear-gradient(90deg, #f3e2f7, #ead2f1);
+    text-align: center;
+    padding: 17px 10px;
+}
+
+.home-header h1 {
+    font-size: 26px;
+    margin: 0 0 3px;
+    color: #642657;
+}
+
+.home-header p {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+    color: #642657;
+}
+
+/* WELCOME BOX */
+.home-content {
+    width: 90%;
+    max-width: 635px;
+    margin: 20px auto;
+    padding: 22px 24px;
+    background: #641b50;
+    color: #fff5ff;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(80, 20, 65, 0.20);
+    text-align: center;
+}
+
+.home-content h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.home-content p {
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+.home-content h3 {
+    font-size: 14px;
+    text-align: left;
+    color: #f3c9ef;
+    margin-top: 17px;
+    margin-bottom: 8px;
+}
+
+.home-content hr {
+    border: none;
+    border-top: 1px solid #d8a6d0;
+    margin: 10px 0;
+}
+
+/* FOOTER */
+.home-footer {
+    width: 85%;
+    max-width: 1050px;
+    margin: 125px auto 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.home-footer-left {
+    width: 48%;
+}
+
+.home-footer-right {
+    width: 35%;
+    text-align: center;
+}
+
+.home-footer h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #642657;
+}
+
+.home-footer p {
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.home-socials {
+    margin-top: 10px;
+}
+
+.home-socials a {
+    color: #8e2581;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 7px;
+}
+
+/* SMALL SCREEN */
+@media screen and (max-width: 600px) {
+
+    .home-header h1 {
+        font-size: 23px;
+    }
+
+    .home-header p {
+        font-size: 15px;
+    }
+
+    .home-content {
+        width: 92%;
+        padding: 18px;
+    }
+
+    .home-content h2 {
+        font-size: 18px;
+    }
+
+    .home-content p {
+        font-size: 12px;
+    }
+
+    .home-footer {
+        flex-direction: column;
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .home-footer-left,
+    .home-footer-right {
+        width: 100%;
+    }
+}
+</style>
 </head>
-<body>
 
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="index.html" class="nav-link active">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+<body class="home-page">
 
-    <div class="content">
-        <h1>Joselyn Dagcuta</h1>
-        <h2>12-Cooper</h2>
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- NAME -->
+<header class="home-header">
+    <h1>Joselyn F. Dagcuta</h1>
+    <p>Grade 12 - Copper</p>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="home-content">
+
+    <h2>Welcome to My Personal Website!</h2>
+
+    <p>
+        Hello! I'm Joselyn, an ICT student who loves exploring
+        technology and learning new skills. This website is where
+        I share a little about myself and the things I create.
+    </p>
+
+    <h3>About My Website</h3>
+
+    <hr>
+
+    <p>
+        This website contains my personal information, favorite photos,
+        school projects, and some of my activities as an ICT student.
+    </p>
+
+</main>
+
+<!-- SOCIAL MEDIA FOOTER -->
+<footer class="home-footer">
+
+    <div class="home-footer-left">
+        <h3>Stay Connected!</h3>
+
+        <p>
+            Thank you for visiting my website. Feel free to explore
+            my pages and learn more about me and my works.
+        </p>
     </div>
 
-     <!-- Footer Section -->
-    <footer class="footer">
+    <div class="home-footer-right">
+        <h3>My Socials</h3>
 
-        <div class="footer-container">
-
-            <div class="footer-info">
-                <h2>Stay Connected!</h2>
-                <p>
-                    Thank you for visiting my portfolio.
-                    connect and contact with me through my social media accounts.
-                    Your support and feedback are appreciated!
-                </p>
-            </div>
-
-            <div class="footer-socials">
-                <h2>My Socials</h2>
-
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61576512509551" target="_blank">f</a>
-                    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=cu0s8pt" target="_blank">▶</a>
-                </div>
-            </div>
-
+        <div class="home-socials">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Instagram">◎</a>
         </div>
+    </div>
 
-        <div class="footer-bottom">
-            <p>©2026 EFN Corporation.</p>
-        </div>
+</footer>
 
-    </footer>
 </body>
 </html>
+
