@@ -8,134 +8,145 @@
 <link rel="stylesheet" href="menu.css">
 
 <style>
-
-/* MAIN ABOUT BOX */
-.about-section {
-    max-width: 1250px;
-    width: 94%;
-    margin: 35px auto;
-    padding: 30px;
-    background: #fff7fc;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px #d77cac40;
+/* ===== ABOUT PAGE DESIGN ===== */
+.about-page {
+    width: 96% !important;
+    max-width: 1250px !important;
+    margin: 20px auto !important;
+    padding: 20px !important;
+    background: #fff7fc !important;
+    color: #754565 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 25px #d77cac40 !important;
 }
 
-.about-section h1 {
-    text-align: center;
-    color: #d34e99;
-    margin-bottom: 10px;
+/* TITLE */
+.about-page-title {
+    text-align: center !important;
+    color: #d34e99 !important;
+    font-size: 30px !important;
+    margin-bottom: 8px !important;
 }
 
-.subtitle {
-    text-align: center;
-    color: #a45a83;
-    margin-bottom: 25px;
+.about-page-subtitle {
+    text-align: center !important;
+    color: #a45a83 !important;
+    font-size: 13px !important;
+    margin-bottom: 18px !important;
 }
 
-/* SIDE BY SIDE LAYOUT */
-.about-layout {
+/* ===== TWO COLUMN LAYOUT ===== */
+.about-main {
     display: grid !important;
-    grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr) !important;
+    grid-template-columns: minmax(0, 1fr) 235px !important;
+    gap: 12px !important;
     align-items: start !important;
-    gap: 22px !important;
     width: 100% !important;
 }
 
-.about-left {
+/* TEXT SIDE */
+.about-text-column {
     width: 100% !important;
     min-width: 0 !important;
 }
 
-/* PROFILE CARD */
-.profile-card {
+/* ACCORDION BOX */
+.about-box {
     width: 100% !important;
+    margin-bottom: 8px !important;
+    border: 1px solid #f0b7d7 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* BUTTON */
+.about-button {
+    width: 100% !important;
+    padding: 10px 12px !important;
+    background: linear-gradient(90deg, #d63384, #f062a6, #e78bc1) !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.about-button:hover {
+    background: #ff69ad !important;
+}
+
+/* SECTION TEXT */
+.about-details {
+    display: none !important;
+    background: #fff0f8 !important;
+    padding: 12px !important;
+    color: #754565 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+}
+
+.about-details.open {
+    display: block !important;
+}
+
+.about-details h2 {
+    color: #c74389 !important;
+    font-size: 15px !important;
+    margin-bottom: 6px !important;
+}
+
+/* ===== PROFILE SIDE ===== */
+.about-profile {
+    width: 235px !important;
+    max-width: 235px !important;
     min-width: 0 !important;
-    background: #fff0f8;
-    border: 1px solid #f0b7d7;
-    border-radius: 18px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 6px 18px #d77cac30;
     margin: 0 !important;
+    padding: 14px !important;
+    background: #fff0f8 !important;
+    border: 1px solid #f0b7d7 !important;
+    border-radius: 15px !important;
+    text-align: center !important;
+    box-shadow: 0 5px 15px #d77cac25 !important;
 }
 
-.profile-picture {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-    border: 5px solid #f3b3d5;
-    margin: 0 auto 18px;
-    display: block;
+/* PROFILE IMAGE */
+.about-profile-image {
+    width: 105px !important;
+    height: 105px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 50% !important;
+    border: 4px solid #f3b3d5 !important;
+    display: block !important;
+    margin: 0 auto 10px !important;
 }
 
-.profile-card h2 {
-    color: #c74389;
-    margin-bottom: 12px;
-    font-size: 26px;
+.about-profile h2 {
+    color: #c74389 !important;
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
 }
 
-.profile-card p {
-    color: #754565;
-    line-height: 1.7;
-    margin-bottom: 12px;
+.about-profile p {
+    color: #754565 !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 7px !important;
 }
 
-.profile-card strong {
-    color: #b83d83;
+.about-profile strong {
+    color: #b83d83 !important;
 }
 
-/* ACCORDION ITEMS */
-.about-item {
-    margin-bottom: 12px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #f0b7d7;
-}
-
-.about-toggle {
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(90deg, #f0b5f7, #e879e4);
-    color: white;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.about-toggle:hover {
-    background: #d34ed1;
-}
-
-.about-content {
-    display: none;
-    background: #fff0f8;
-    padding: 20px;
-    color: #754565;
-    line-height: 1.8;
-    animation: appear 0.3s ease;
-}
-
-.about-content.show {
-    display: block;
-}
-
-.about-content h2 {
-    color: #c74389;
-    margin-bottom: 8px;
-}
-
-/* ANIMATION */
-@keyframes appear {
+/* OPEN CONTENT ANIMATION */
+@keyframes aboutAppear {
     from {
         opacity: 0;
-        transform: translateY(-5px);
+        transform: translateY(-4px);
     }
     to {
         opacity: 1;
@@ -143,77 +154,106 @@
     }
 }
 
-/* SMALL SCREEN */
-@media(max-width: 750px) {
-    .about-layout {
+.about-details.open {
+    animation: aboutAppear 0.25s ease;
+}
+
+/* ===== SMALL LAPTOP / TABLET ===== */
+@media screen and (max-width: 850px) and (min-width: 601px) {
+    .about-page {
+        padding: 15px !important;
+    }
+
+    .about-main {
+        grid-template-columns: minmax(0, 1fr) 200px !important;
+        gap: 10px !important;
+    }
+
+    .about-profile {
+        width: 200px !important;
+        max-width: 200px !important;
+        padding: 12px !important;
+    }
+
+    .about-profile-image {
+        width: 90px !important;
+        height: 90px !important;
+    }
+
+    .about-button {
+        font-size: 12px !important;
+        padding: 9px 10px !important;
+    }
+
+    .about-details {
+        font-size: 11px !important;
+        padding: 10px !important;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media screen and (max-width: 600px) {
+    .about-page {
+        width: 95% !important;
+        margin: 15px auto !important;
+        padding: 14px !important;
+    }
+
+    .about-page-title {
+        font-size: 26px !important;
+    }
+
+    .about-main {
         grid-template-columns: 1fr !important;
+        gap: 15px !important;
     }
 
-    .about-section {
-        padding: 20px;
-    }
-
-    .profile-card {
+    .about-profile {
         width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .about-profile-image {
+        width: 120px !important;
+        height: 120px !important;
     }
 }
-
-@media(max-width: 600px) {
-    .about-section {
-        margin: 20px auto;
-        padding: 18px;
-    }
-
-    .about-toggle {
-        font-size: 14px;
-        padding: 14px;
-    }
-
-    .profile-picture {
-        width: 130px;
-        height: 130px;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAVIGATION MENU -->
 <nav class="navbar">
     <a href="home.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active">About</a>
     <a href="gallery.html">Gallery</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
 </nav>
 
-<!-- ABOUT SECTION -->
-<section class="about-section">
+<!-- ABOUT PAGE -->
+<section class="about-page">
 
-    <h1>♡ About Me ♡</h1>
+    <h1 class="about-page-title">♡ About Me ♡</h1>
 
-    <p class="subtitle">
+    <p class="about-page-subtitle">
         Click each section to discover more about me.
     </p>
 
-    <!-- SIDE BY SIDE CONTENT -->
-    <div class="about-layout">
+    <div class="about-main">
 
-        <!-- LEFT SIDE -->
-        <div class="about-left">
+        <!-- LEFT: TEXT SECTIONS -->
+        <div class="about-text-column">
 
             <!-- MY GOALS -->
-            <div class="about-item">
-
-                <button class="about-toggle" onclick="toggleAbout(this)">
-                     My Goals <span>＋</span>
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Goals <span>＋</span>
                 </button>
 
-                <div class="about-content">
+                <div class="about-details">
                     <h2>My Goals</h2>
-
                     <p>
                         My goal is to finish my studies, achieve my dreams,
                         make my family proud, and have a successful future.
@@ -231,47 +271,40 @@
                         hard for.
                     </p>
                 </div>
-
             </div>
 
             <!-- FAVORITE SNACK -->
-            <div class="about-item">
-
-                <button class="about-toggle" onclick="toggleAbout(this)">
-                     My Favorite Snack <span>＋</span>
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Favorite Snack <span>＋</span>
                 </button>
 
-                <div class="about-content">
+                <div class="about-details">
                     <h2>My Favorite Snack</h2>
-
                     <p>
-                        My favorite snack is French fries.
-                        I love eating it because it is delicious
-                        and makes me happy. I enjoy its crispy texture
-                        and salty taste, especially when it is freshly cooked.
-                        I also love eating it with ketchup or cheese dip
-                        because it makes the flavor even better. French fries
-                        are one of my favorite snacks whenever I feel hungry
-                        or want to enjoy something tasty. For me, it is a
-                        simple snack, but it always makes my day better.
-                        I can eat it anytime, whether I am relaxing,
-                        watching movies, or spending time with my friends
-                        and family.
+                        My favorite snack is French fries. I love eating it
+                        because it is delicious and makes me happy. I enjoy
+                        its crispy texture and salty taste, especially when
+                        it is freshly cooked. I also love eating it with
+                        ketchup or cheese dip because it makes the flavor
+                        even better. French fries are one of my favorite
+                        snacks whenever I feel hungry or want to enjoy
+                        something tasty. For me, it is a simple snack,
+                        but it always makes my day better. I can eat it
+                        anytime, whether I am relaxing, watching movies,
+                        or spending time with my friends and family.
                     </p>
                 </div>
-
             </div>
 
             <!-- MY HOBBY -->
-            <div class="about-item">
-
-                <button class="about-toggle" onclick="toggleAbout(this)">
-                     My Hobby <span>＋</span>
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Hobby <span>＋</span>
                 </button>
 
-                <div class="about-content">
+                <div class="about-details">
                     <h2>My Hobby</h2>
-
                     <p>
                         My hobby is spending time with my family and friends.
                         I enjoy doing it during my free time because it makes
@@ -281,27 +314,23 @@
                         eating together, and doing fun activities whenever
                         we have time. Spending time with the people I love
                         helps me forget my stress and makes me feel
-                        appreciated and loved. For me, these simple
-                        moments are very special because they bring
-                        happiness into my life. I believe that spending
-                        quality time with family and friends is one of
-                        the best ways to make life more meaningful
-                        and memorable.
+                        appreciated and loved. For me, these simple moments
+                        are very special because they bring happiness into
+                        my life. I believe that spending quality time with
+                        family and friends is one of the best ways to make
+                        life more meaningful and memorable.
                     </p>
                 </div>
-
             </div>
 
             <!-- FAVORITE TO WATCH -->
-            <div class="about-item">
-
-                <button class="about-toggle" onclick="toggleAbout(this)">
-                     My Favorite to Watch <span>＋</span>
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Favorite to Watch <span>＋</span>
                 </button>
 
-                <div class="about-content">
+                <div class="about-details">
                     <h2>My Favorite to Watch</h2>
-
                     <p>
                         I love watching Superbook because it is very
                         interesting and teaches me about the Bible.
@@ -321,19 +350,16 @@
                         to watch during my free time.
                     </p>
                 </div>
-
             </div>
 
             <!-- FAVORITE GAMES -->
-            <div class="about-item">
-
-                <button class="about-toggle" onclick="toggleAbout(this)">
-                     My Favorite Games <span>＋</span>
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Favorite Games <span>＋</span>
                 </button>
 
-                <div class="about-content">
+                <div class="about-details">
                     <h2>My Favorite Games</h2>
-
                     <p>
                         My favorite game is Minecraft. I enjoy playing
                         it for fun whenever I have free time. I love
@@ -352,17 +378,16 @@
                         way to spend my free time and express my creativity.
                     </p>
                 </div>
-
             </div>
 
         </div>
 
-        <!-- RIGHT SIDE: PROFILE -->
-        <div class="profile-card">
+        <!-- RIGHT: PROFILE -->
+        <aside class="about-profile">
 
             <img src="Future me.jpg"
                  alt="My Profile Picture"
-                 class="profile-picture">
+                 class="about-profile-image">
 
             <h2>Hello! Welcome.</h2>
 
@@ -380,7 +405,7 @@
                 <strong>Strand:</strong> ICT
             </p>
 
-        </div>
+        </aside>
 
     </div>
 
@@ -388,37 +413,33 @@
 
 <!-- JAVASCRIPT -->
 <script>
-
-function toggleAbout(button) {
-
+function toggleSection(button) {
     const content = button.nextElementSibling;
     const icon = button.querySelector("span");
 
-    // CLOSE THE OTHER CONTENT
-    document.querySelectorAll(".about-content").forEach(item => {
+    // Close other sections
+    document.querySelectorAll(".about-details").forEach(item => {
         if (item !== content) {
-            item.classList.remove("show");
+            item.classList.remove("open");
         }
     });
 
-    // RESET OTHER ICONS
-    document.querySelectorAll(".about-toggle span").forEach(item => {
+    // Reset other icons
+    document.querySelectorAll(".about-button span").forEach(item => {
         if (item !== icon) {
             item.innerHTML = "＋";
         }
     });
 
-    // OPEN OR CLOSE CLICKED SECTION
-    content.classList.toggle("show");
+    // Toggle selected section
+    content.classList.toggle("open");
 
-    if (content.classList.contains("show")) {
+    if (content.classList.contains("open")) {
         icon.innerHTML = "−";
     } else {
         icon.innerHTML = "＋";
     }
-
 }
-
 </script>
 
 </body>
