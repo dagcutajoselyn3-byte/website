@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,39 +11,49 @@
     <link rel="stylesheet" href="menu.css">
 
     <style>
-        /* GALLERY DESIGN */
+        /* ===== PINK GALLERY DESIGN ===== */
+
         body {
-            background: #120b1c;
-            color: white;
+            background: linear-gradient(135deg, #fff0f6, #ffe0ef, #ffd6e8);
+            color: #754565;
         }
 
+        /* HEADER */
         .gallery-header {
             text-align: center;
-            padding: 50px 20px 20px;
+            padding: 45px 20px 20px;
         }
 
         .gallery-header h1 {
-            font-size: 38px;
-            color: #e7b8ff;
+            font-size: 36px;
+            color: #d63384;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
         .gallery-header p {
-            color: #d1c2dd;
+            color: #986184;
+            font-size: 14px;
         }
 
-        /* SLIDER CONTAINER */
+        /* GALLERY CONTAINER */
         .gallery-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 20px 60px;
+            padding: 25px 20px 50px;
         }
 
+        /* SLIDER */
         .gallery-slider {
             width: 100%;
             max-width: 650px;
             text-align: center;
+            background: rgba(255, 255, 255, 0.65);
+            padding: 30px 25px;
+            border-radius: 25px;
+            border: 1px solid #ffc5df;
+            box-shadow: 0 10px 35px rgba(214, 51, 132, 0.12);
         }
 
         /* PICTURE */
@@ -53,18 +64,26 @@
             object-fit: contain;
             display: block;
             margin: auto;
-            border-radius: 18px;
-            box-shadow: 0 0 25px rgba(190, 100, 255, 0.25);
+            border-radius: 20px;
+            background: #fff7fb;
+            padding: 8px;
+            border: 3px solid #ffc5df;
+            box-shadow: 0 0 25px rgba(231, 84, 166, 0.18);
             transition: 0.4s ease;
         }
 
-        /* ARROWS */
+        .slider-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(231, 84, 166, 0.3);
+        }
+
+        /* ARROW BUTTONS */
         .slider-controls {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 25px;
-            margin-top: 20px;
+            gap: 22px;
+            margin-top: 22px;
         }
 
         .slider-btn {
@@ -72,32 +91,34 @@
             height: 45px;
             border: none;
             border-radius: 50%;
-            background: #9b59b6;
+            background: linear-gradient(135deg, #e754a6, #ff91c8);
             color: white;
-            font-size: 25px;
+            font-size: 22px;
             cursor: pointer;
-            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
+            transition: 0.3s ease;
         }
 
         .slider-btn:hover {
-            background: #d28cff;
-            transform: scale(1.1);
+            background: #d63384;
+            transform: scale(1.12);
         }
 
         /* CAPTION */
         .gallery-caption {
-            margin-top: 20px;
+            margin-top: 22px;
         }
 
         .gallery-caption h2 {
-            color: #e7b8ff;
-            font-size: 25px;
+            color: #d63384;
+            font-size: 24px;
             margin-bottom: 10px;
         }
 
         .gallery-caption p {
-            color: #d1c2dd;
-            font-size: 15px;
+            color: #986184;
+            font-size: 14px;
+            line-height: 1.7;
         }
 
         /* DOTS */
@@ -105,20 +126,25 @@
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 22px;
         }
 
         .dot {
-            width: 10px;
-            height: 10px;
+            width: 11px;
+            height: 11px;
             border-radius: 50%;
-            background: #65516f;
+            background: #f3b6d5;
             cursor: pointer;
             border: none;
+            transition: 0.3s ease;
+        }
+
+        .dot:hover {
+            background: #e754a6;
         }
 
         .dot.active {
-            background: #d28cff;
+            background: #d63384;
             transform: scale(1.3);
         }
 
@@ -129,8 +155,17 @@
 
         /* MOBILE */
         @media (max-width: 600px) {
+
+            .gallery-header {
+                padding-top: 35px;
+            }
+
             .gallery-header h1 {
                 font-size: 30px;
+            }
+
+            .gallery-slider {
+                padding: 20px 15px;
             }
 
             .slider-image {
@@ -141,7 +176,12 @@
             .slider-controls {
                 gap: 15px;
             }
+
+            .gallery-caption h2 {
+                font-size: 21px;
+            }
         }
+
     </style>
 </head>
 
@@ -178,18 +218,22 @@
 
             <div class="slider-controls">
 
-                <button class="slider-btn" id="prevBtn" aria-label="Previous picture">
+                <button class="slider-btn" id="prevBtn"
+                        aria-label="Previous picture">
                     &#10094;
                 </button>
 
-                <button class="slider-btn" id="nextBtn" aria-label="Next picture">
+                <button class="slider-btn" id="nextBtn"
+                        aria-label="Next picture">
                     &#10095;
                 </button>
 
             </div>
 
+            <!-- CAPTION -->
             <div class="gallery-caption">
                 <h2 id="sliderTitle">My Future Me</h2>
+
                 <p id="sliderDescription">
                     Dreaming big and working hard for my future.
                 </p>
@@ -209,6 +253,7 @@
 
             <div class="footer-info">
                 <h2>Stay Connected!</h2>
+
                 <p>
                     Thank you for visiting my portfolio.
                     These pictures represent my dreams,
@@ -220,11 +265,13 @@
                 <h2>My Socials</h2>
 
                 <div class="social-links">
+
                     <a href="https://www.facebook.com/profile.php?id=61576512509551"
                        target="_blank">f</a>
 
                     <a href="https://www.instagram.com/"
                        target="_blank">◎</a>
+
                 </div>
             </div>
 
@@ -276,7 +323,8 @@
 
             sliderImage.src = galleryPictures[currentIndex].image;
             sliderTitle.textContent = galleryPictures[currentIndex].title;
-            sliderDescription.textContent = galleryPictures[currentIndex].description;
+            sliderDescription.textContent =
+                galleryPictures[currentIndex].description;
 
             // UPDATE DOTS
             sliderDots.innerHTML = "";
@@ -303,7 +351,7 @@
 
         }
 
-        // NEXT ARROW
+        // NEXT BUTTON
         document.getElementById("nextBtn").onclick = function() {
 
             currentIndex++;
@@ -316,7 +364,7 @@
 
         };
 
-        // PREVIOUS ARROW
+        // PREVIOUS BUTTON
         document.getElementById("prevBtn").onclick = function() {
 
             currentIndex--;
@@ -329,11 +377,12 @@
 
         };
 
-        // INITIAL PICTURE
+        // FIRST PICTURE
         showPicture(0);
 
     </script>
 
 </body>
 </html>
+
 
