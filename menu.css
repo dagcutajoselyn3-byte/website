@@ -1124,4 +1124,52 @@ body {
     border-radius: 50%;
     display: block;
     margin: 10px auto;
+
+   }
+    /* CONTACT SECTION */
+.contact-section {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* INSTAGRAM AND FACEBOOK CARDS */
+.instagram-card,
+.facebook-card {
+    width: 220px;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* SMALL PICTURES */
+.contact-section .profile-picture {
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 10px auto;
+}
+
+/* BUTTONS */
+.instagram-btn,
+.facebook-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+/* KEEP CARDS BESIDE EACH OTHER */
+.contact-container {
+    flex-direction: row;
 }
