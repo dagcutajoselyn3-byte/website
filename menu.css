@@ -1114,5 +1114,14 @@ body {
     object-fit: contain;
     display: block;
     margin: 15px auto;
-    border-radius: 10px;
+    border-radius: 10px;  
+    
+   }
+    .profile-picture {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 10px auto;
 }
