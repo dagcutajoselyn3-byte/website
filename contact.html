@@ -1,53 +1,86 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contact</title>
 
+    <!-- CONNECT SA MENU CSS -->
     <link rel="stylesheet" href="menu.css">
 
     <style>
-        /* CONTACT DESIGN */
+        /* CONTACT PAGE */
         .contact-section {
+            flex: 1;
             text-align: center;
-            padding: 30px 15px;
+            padding: 35px 15px;
+        }
+
+        .contact-section h1 {
+            color: #ff80c0;
+            font-size: 38px;
+            margin-bottom: 12px;
+            text-shadow: 0 0 12px rgba(255, 77, 166, 0.3);
         }
 
         .contact-subtitle {
-            margin-bottom: 25px;
+            color: #e8cce2;
+            margin-bottom: 30px;
+            font-size: 15px;
         }
 
-        /* MAGKATABI ANG CARDS */
+        /* CARDS SIDE BY SIDE */
         .contact-container {
             display: flex;
             justify-content: center;
             align-items: stretch;
-            gap: 15px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
+        /* SOCIAL MEDIA CARDS */
         .instagram-card,
         .facebook-card {
             width: 220px;
-            padding: 15px;
-            border-radius: 15px;
-            background: #fff0f6;
-            box-shadow: 0 4px 12px rgba(180, 70, 120, 0.15);
-            box-sizing: border-box;
+            padding: 18px 15px;
+            background: linear-gradient(145deg, #fff0f6, #ffe0ed);
+            color: #5a1741;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(255, 80, 160, 0.15);
+            border: 1px solid #ffb6d5;
         }
 
-        /* PALIIT NG PICTURE */
+        .instagram-card h2,
+        .facebook-card h2 {
+            font-size: 21px;
+            margin-bottom: 7px;
+        }
+
+        .instagram-card p,
+        .facebook-card p {
+            font-size: 13px;
+            margin: 7px 0;
+        }
+
+        .instagram-card h3,
+        .facebook-card h3 {
+            font-size: 16px;
+            margin-top: 8px;
+        }
+
+        /* SMALL PROFILE PICTURES */
         .contact-section img.profile-picture {
-            width: 75px !important;
-            height: 75px !important;
-            max-width: 75px !important;
+            width: 75px;
+            height: 75px;
+            max-width: 75px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
-            margin: 10px auto;
+            margin: 12px auto;
+            border: 3px solid white;
+            box-shadow: 0 3px 8px rgba(100, 20, 60, 0.15);
         }
 
         /* BUTTONS */
@@ -58,19 +91,40 @@
             text-decoration: none;
             color: white;
             border-radius: 20px;
-            margin-top: 5px;
+            margin-top: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            transition: 0.3s ease;
         }
 
         .instagram-btn {
-            background: #e1306c;
+            background: linear-gradient(45deg, #f09433, #e1306c, #833ab4);
         }
 
         .facebook-btn {
             background: #1877f2;
         }
 
-        /* MOBILE */
+        .instagram-btn:hover,
+        .facebook-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+        /* SMALL SCREEN */
         @media screen and (max-width: 500px) {
+            .contact-section {
+                padding: 25px 10px;
+            }
+
+            .contact-section h1 {
+                font-size: 30px;
+            }
+
+            .contact-subtitle {
+                font-size: 13px;
+            }
+
             .contact-container {
                 gap: 10px;
             }
@@ -78,6 +132,7 @@
             .instagram-card,
             .facebook-card {
                 width: 160px;
+                padding: 13px 8px;
             }
         }
     </style>
@@ -85,7 +140,7 @@
 
 <body>
 
-    <!-- NAVIGATION MENU: HINDI TATANGGALIN -->
+    <!-- NAVIGATION MENU -->
     <nav class="menu">
         <a href="home.html">Home</a>
         <a href="about.html">About</a>
@@ -94,7 +149,7 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT CONTENT -->
     <section class="contact-section">
 
         <h1>Contact Me</h1>
@@ -112,7 +167,7 @@
                 <p>Follow me on Instagram</p>
 
                 <img src="instagram.jpg"
-                     alt="My Instagram Profile"
+                     alt="Instagram profile"
                      class="profile-picture">
 
                 <h3>Joselyn Dagcuta</h3>
@@ -120,6 +175,7 @@
 
                 <a href="https://www.instagram.com/dagcutajoselyn/"
                    target="_blank"
+                   rel="noopener noreferrer"
                    class="instagram-btn">
                     Visit Instagram
                 </a>
@@ -133,7 +189,7 @@
                 <p>Connect with me on Facebook</p>
 
                 <img src="facebook.jpg"
-                     alt="My Facebook Profile"
+                     alt="Facebook profile"
                      class="profile-picture">
 
                 <h3>Joselyn Dagcuta</h3>
