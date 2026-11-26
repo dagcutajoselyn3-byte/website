@@ -10,12 +10,13 @@
 <link rel="stylesheet" href="menu.css">
 
 <style>
-/* PINK BACKGROUND */
+
+/* ===== PINK BACKGROUND ===== */
 body {
     background: linear-gradient(135deg, #fff0f6, #ffe1ef, #ffd6e8) !important;
 }
 
-/* ABOUT PAGE */
+/* ===== ABOUT PAGE ===== */
 .about-page {
     width: 96% !important;
     max-width: 1250px !important;
@@ -28,7 +29,7 @@ body {
     box-shadow: 0 5px 20px rgba(214, 51, 132, 0.12) !important;
 }
 
-/* TITLE */
+/* ===== TITLE ===== */
 .about-page h1 {
     color: #d63384 !important;
     text-align: center !important;
@@ -36,7 +37,7 @@ body {
     margin-bottom: 20px !important;
 }
 
-/* ABOUT CONTENT */
+/* ===== ABOUT LAYOUT ===== */
 .about-layout {
     display: flex !important;
     flex-direction: row !important;
@@ -44,13 +45,13 @@ body {
     gap: 25px !important;
 }
 
-/* TEXT */
+/* ===== TEXT CONTENT ===== */
 .about-content {
     flex: 1 !important;
     min-width: 0 !important;
 }
 
-/* PROFILE */
+/* ===== PROFILE ===== */
 .about-profile {
     width: 235px !important;
     flex-shrink: 0 !important;
@@ -66,7 +67,16 @@ body {
     box-shadow: 0 5px 15px rgba(214, 51, 132, 0.15) !important;
 }
 
-/* ACCORDION */
+.about-profile h2 {
+    color: #d63384 !important;
+    margin-top: 15px !important;
+}
+
+.about-profile p {
+    margin: 7px 0 !important;
+}
+
+/* ===== ACCORDION ===== */
 .about-page details {
     background: #fff0f8 !important;
     border: 1px solid #ffc5df !important;
@@ -87,8 +97,113 @@ body {
     line-height: 1.7 !important;
 }
 
-/* MOBILE */
+/* ===== STAY CONNECTED FOOTER ===== */
+.about-footer {
+    width: 96%;
+    max-width: 1250px;
+    margin: 0 auto 25px;
+    background: #fff5fa;
+    color: #754565;
+    border: 2px solid #ffc5df;
+    border-radius: 0 0 18px 18px;
+    padding: 25px 30px 15px;
+    box-shadow: 0 5px 20px rgba(214, 51, 132, 0.10);
+}
+
+/* FOOTER CONTENT */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* STAY CONNECTED */
+.stay-connected {
+    flex: 1;
+    text-align: center;
+    min-width: 250px;
+}
+
+.stay-connected h2 {
+    color: #d63384;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.stay-connected p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #8b6680;
+}
+
+/* MY SOCIALS */
+.my-socials {
+    min-width: 220px;
+    text-align: center;
+}
+
+.my-socials h2 {
+    color: #d63384;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* FACEBOOK */
+.facebook {
+    background: #1877f2;
+}
+
+.facebook:hover {
+    transform: translateY(-4px);
+    background: #0d5ec9;
+}
+
+/* INSTAGRAM */
+.instagram {
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+.instagram:hover {
+    transform: translateY(-4px);
+    opacity: 0.85;
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #f5c5dc;
+    margin-top: 20px;
+    padding-top: 12px;
+    color: #a17b94;
+    font-size: 12px;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 700px) {
+
     .about-layout {
         flex-direction: column !important;
     }
@@ -98,12 +213,28 @@ body {
         max-width: 250px !important;
         margin: auto !important;
     }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stay-connected,
+    .my-socials {
+        width: 100%;
+    }
+
+    .about-footer {
+        padding: 20px 15px 12px;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- ===== NAVIGATION ===== -->
 <nav class="navbar">
     <a href="home.html">Home</a>
     <a href="about.html">About</a>
@@ -112,107 +243,120 @@ body {
     <a href="contact.html">Contact</a>
 </nav>
 
+<!-- ===== ABOUT PAGE ===== -->
 <div class="about-page">
 
-    <!-- TITLE: TINANGGAL ANG HEARTS -->
     <h1>About Me</h1>
 
     <div class="about-layout">
 
+        <!-- ABOUT CONTENT -->
         <div class="about-content">
 
             <details>
                 <summary>My Goals</summary>
-                <p>My goal is to finish my studies, achieve my dreams,
-                        make my family proud, and have a successful future.
-                        I want to become a better person, gain more knowledge,
-                        and learn new skills that will help me in life. I also
-                        dream of having a stable job, becoming financially
-                        independent, and giving my family a comfortable life
-                        as a way of thanking them for all their love,
-                        sacrifices, and support. I want to overcome every
-                        challenge, never give up on my dreams, and prove
-                        to myself that all my hard work and sacrifices
-                        will be worth it. Most importantly, I want to
-                        build a bright future, help the people I love,
-                        and achieve all the things I have been working
-                        hard for.</p>
+                <p>
+                My goal is to finish my studies, achieve my dreams,
+                make my family proud, and have a successful future.
+                I want to become a better person, gain more knowledge,
+                and learn new skills that will help me in life. I also
+                dream of having a stable job, becoming financially
+                independent, and giving my family a comfortable life
+                as a way of thanking them for all their love,
+                sacrifices, and support. I want to overcome every
+                challenge, never give up on my dreams, and prove
+                to myself that all my hard work and sacrifices
+                will be worth it. Most importantly, I want to
+                build a bright future, help the people I love,
+                and achieve all the things I have been working
+                hard for.
+                </p>
             </details>
 
             <details>
                 <summary>My Favorite Snack</summary>
-                <p> My favorite snack is French fries. I love eating it
-                        because it is delicious and makes me happy. I enjoy
-                        its crispy texture and salty taste, especially when
-                        it is freshly cooked. I also love eating it with
-                        ketchup or cheese dip because it makes the flavor
-                        even better. French fries are one of my favorite
-                        snacks whenever I feel hungry or want to enjoy
-                        something tasty. For me, it is a simple snack,
-                        but it always makes my day better. I can eat it
-                        anytime, whether I am relaxing, watching movies,
-                        or spending time with my friends and family.</p>
+                <p>
+                My favorite snack is French fries. I love eating it
+                because it is delicious and makes me happy. I enjoy
+                its crispy texture and salty taste, especially when
+                it is freshly cooked. I also love eating it with
+                ketchup or cheese dip because it makes the flavor
+                even better. French fries are one of my favorite
+                snacks whenever I feel hungry or want to enjoy
+                something tasty. For me, it is a simple snack,
+                but it always makes my day better. I can eat it
+                anytime, whether I am relaxing, watching movies,
+                or spending time with my friends and family.
+                </p>
             </details>
 
             <details>
                 <summary>My Hobby</summary>
-                <p>My hobby is spending time with my family and friends.
-                        I enjoy doing it during my free time because it makes
-                        me feel happy and relaxed. I love talking, laughing,
-                        sharing stories, and creating wonderful memories
-                        with them. I also enjoy going to different places,
-                        eating together, and doing fun activities whenever
-                        we have time. Spending time with the people I love
-                        helps me forget my stress and makes me feel
-                        appreciated and loved. For me, these simple moments
-                        are very special because they bring happiness into
-                        my life. I believe that spending quality time with
-                        family and friends is one of the best ways to make
-                        life more meaningful and memorable.</p>
+                <p>
+                My hobby is spending time with my family and friends.
+                I enjoy doing it during my free time because it makes
+                me feel happy and relaxed. I love talking, laughing,
+                sharing stories, and creating wonderful memories
+                with them. I also enjoy going to different places,
+                eating together, and doing fun activities whenever
+                we have time. Spending time with the people I love
+                helps me forget my stress and makes me feel
+                appreciated and loved. For me, these simple moments
+                are very special because they bring happiness into
+                my life. I believe that spending quality time with
+                family and friends is one of the best ways to make
+                life more meaningful and memorable.
+                </p>
             </details>
 
             <details>
                 <summary>My Favorite to Watch</summary>
-                <p> I love watching Superbook because it is very
-                        interesting and teaches me about the Bible.
-                        I enjoy watching its stories because they are
-                        entertaining, meaningful, and full of important
-                        lessons. It helps me learn more about God,
-                        understand Bible stories, and discover the
-                        importance of having faith, kindness, love,
-                        and respect for others. I also like how the
-                        characters experience different adventures
-                        while learning valuable lessons from the Bible.
-                        Every episode teaches me something new that
-                        I can apply to my everyday life. Watching
-                        Superbook is not only enjoyable but also helps
-                        me grow in my knowledge and understanding
-                        of God's words. It is one of my favorite shows
-                        to watch during my free time.</p>
+                <p>
+                I love watching Superbook because it is very
+                interesting and teaches me about the Bible.
+                I enjoy watching its stories because they are
+                entertaining, meaningful, and full of important
+                lessons. It helps me learn more about God,
+                understand Bible stories, and discover the
+                importance of having faith, kindness, love,
+                and respect for others. I also like how the
+                characters experience different adventures
+                while learning valuable lessons from the Bible.
+                Every episode teaches me something new that
+                I can apply to my everyday life. Watching
+                Superbook is not only enjoyable but also helps
+                me grow in my knowledge and understanding
+                of God's words. It is one of my favorite shows
+                to watch during my free time.
+                </p>
             </details>
 
             <details>
                 <summary>My Favorite Games</summary>
-                <p>My favorite game is Minecraft. I enjoy playing
-                        it for fun whenever I have free time. I love
-                        this game because it allows me to explore
-                        different places, build houses, create beautiful
-                        structures, and discover new things. It also
-                        challenges my creativity and imagination because
-                        I can design and build anything I want. I enjoy
-                        exploring the world, collecting materials,
-                        and completing different adventures in the game.
-                        Sometimes, I also play with my friends because
-                        it makes the game more exciting and enjoyable.
-                        Playing Minecraft helps me relax, especially
-                        when I feel tired from school activities.
-                        For me, it is not just a game but also a fun
-                        way to spend my free time and express my creativity.</p>
+                <p>
+                My favorite game is Minecraft. I enjoy playing
+                it for fun whenever I have free time. I love
+                this game because it allows me to explore
+                different places, build houses, create beautiful
+                structures, and discover new things. It also
+                challenges my creativity and imagination because
+                I can design and build anything I want. I enjoy
+                exploring the world, collecting materials,
+                and completing different adventures in the game.
+                Sometimes, I also play with my friends because
+                it makes the game more exciting and enjoyable.
+                Playing Minecraft helps me relax, especially
+                when I feel tired from school activities.
+                For me, it is not just a game but also a fun
+                way to spend my free time and express my creativity.
+                </p>
             </details>
 
         </div>
 
+        <!-- PROFILE -->
         <div class="about-profile">
+
             <img src="Future me.jpg" alt="My Profile">
 
             <h2>Hello!</h2>
@@ -220,10 +364,60 @@ body {
             <p>Joselyn F. Dagcuta</p>
             <p>Grade 12 - 12 Cooper</p>
             <p>Strand: ICT</p>
+
         </div>
 
     </div>
 </div>
+
+<!-- ===== STAY CONNECTED FOOTER ===== -->
+<footer class="about-footer">
+
+    <div class="footer-content">
+
+        <!-- STAY CONNECTED -->
+        <div class="stay-connected">
+            <h2>Stay Connected!</h2>
+
+            <p>
+                Thank you for visiting my portfolio.
+                Connect and contact me through my social media accounts.
+                Your support and feedback are appreciated!
+            </p>
+        </div>
+
+        <!-- MY SOCIALS -->
+        <div class="my-socials">
+            <h2>My Socials</h2>
+
+            <div class="social-icons">
+
+                <!-- FACEBOOK -->
+                <a href="#" class="facebook"
+                   target="_blank"
+                   title="Facebook">
+                    f
+                </a>
+
+                <!-- INSTAGRAM -->
+                <a href="https://www.instagram.com/dagcutajoselyn/"
+                   class="instagram"
+                   target="_blank"
+                   title="Instagram">
+                    ◎
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        © 2026 EFN Corporation. All Rights Reserved.
+    </div>
+
+</footer>
 
 </body>
 </html>
