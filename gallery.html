@@ -3,386 +3,584 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Gallery</title>
 
-    <title>My Gallery</title>
+<link rel="stylesheet" href="menu.css">
 
-    <link rel="stylesheet" href="menu.css">
+<style>
 
-    <style>
-        /* ===== PINK GALLERY DESIGN ===== */
+/* ===== BODY ===== */
+body {
+    background: linear-gradient(135deg, #fff0f6, #ffe0ef, #ffd6e8) !important;
+    color: #754565;
+    margin: 0;
+}
 
-        body {
-            background: linear-gradient(135deg, #fff0f6, #ffe0ef, #ffd6e8);
-            color: #754565;
-        }
+/* ===== NAVBAR: LEFT SIDE, HORIZONTAL ===== */
+nav.navbar {
+    width: 100% !important;
+    display: block !important;
+    background: linear-gradient(90deg, #e754a6, #d63384) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
 
-        /* HEADER */
-        .gallery-header {
-            text-align: center;
-            padding: 45px 20px 20px;
-        }
+nav.navbar ul.nav-list {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
 
-        .gallery-header h1 {
-            font-size: 36px;
-            color: #d63384;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
+nav.navbar ul.nav-list li {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-shrink: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
-        .gallery-header p {
-            color: #986184;
-            font-size: 14px;
-        }
+nav.navbar ul.nav-list li a.nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 22px 35px !important;
+    color: #fff4fa !important;
+    font-size: 19px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    transition: 0.3s ease !important;
+}
 
-        /* GALLERY CONTAINER */
-        .gallery-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px 20px 50px;
-        }
+/* HOVER */
+nav.navbar ul.nav-list li a.nav-link:hover {
+    background: #c92b78 !important;
+    color: white !important;
+}
 
-        /* SLIDER */
-        .gallery-slider {
-            width: 100%;
-            max-width: 650px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.65);
-            padding: 30px 25px;
-            border-radius: 25px;
-            border: 1px solid #ffc5df;
-            box-shadow: 0 10px 35px rgba(214, 51, 132, 0.12);
-        }
+/* ACTIVE GALLERY */
+nav.navbar ul.nav-list li a.nav-link.active {
+    background: #f18bbd !important;
+    color: white !important;
+}
 
-        /* PICTURE */
-        .slider-image {
-            width: 100%;
-            max-width: 420px;
-            height: 380px;
-            object-fit: contain;
-            display: block;
-            margin: auto;
-            border-radius: 20px;
-            background: #fff7fb;
-            padding: 8px;
-            border: 3px solid #ffc5df;
-            box-shadow: 0 0 25px rgba(231, 84, 166, 0.18);
-            transition: 0.4s ease;
-        }
+/* ===== GALLERY HEADER ===== */
+.gallery-header {
+    text-align: center;
+    padding: 45px 20px 20px;
+}
 
-        .slider-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(231, 84, 166, 0.3);
-        }
+.gallery-header h1 {
+    font-size: 36px;
+    color: #d63384;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
 
-        /* ARROW BUTTONS */
-        .slider-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 22px;
-            margin-top: 22px;
-        }
+.gallery-header p {
+    color: #986184;
+    font-size: 14px;
+}
 
-        .slider-btn {
-            width: 45px;
-            height: 45px;
-            border: none;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #e754a6, #ff91c8);
-            color: white;
-            font-size: 22px;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
-            transition: 0.3s ease;
-        }
+/* ===== GALLERY CONTAINER ===== */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px 50px;
+}
 
-        .slider-btn:hover {
-            background: #d63384;
-            transform: scale(1.12);
-        }
+/* ===== SLIDER ===== */
+.gallery-slider {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.65);
+    padding: 30px 25px;
+    border-radius: 25px;
+    border: 1px solid #ffc5df;
+    box-shadow: 0 10px 35px rgba(214, 51, 132, 0.12);
+}
 
-        /* CAPTION */
-        .gallery-caption {
-            margin-top: 22px;
-        }
+/* ===== IMAGE ===== */
+.slider-image {
+    width: 100%;
+    max-width: 420px;
+    height: 380px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    background: #fff7fb;
+    padding: 8px;
+    border: 3px solid #ffc5df;
+    box-shadow: 0 0 25px rgba(231, 84, 166, 0.18);
+    transition: 0.4s ease;
+}
 
-        .gallery-caption h2 {
-            color: #d63384;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+.slider-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(231, 84, 166, 0.3);
+}
 
-        .gallery-caption p {
-            color: #986184;
-            font-size: 14px;
-            line-height: 1.7;
-        }
+/* ===== ARROW BUTTONS ===== */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 22px;
+}
 
-        /* DOTS */
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 22px;
-        }
+.slider-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e754a6, #ff91c8);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
+    transition: 0.3s ease;
+}
 
-        .dot {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: #f3b6d5;
-            cursor: pointer;
-            border: none;
-            transition: 0.3s ease;
-        }
+.slider-btn:hover {
+    background: #d63384;
+    transform: scale(1.12);
+}
 
-        .dot:hover {
-            background: #e754a6;
-        }
+/* ===== CAPTION ===== */
+.gallery-caption {
+    margin-top: 22px;
+}
 
-        .dot.active {
-            background: #d63384;
-            transform: scale(1.3);
-        }
+.gallery-caption h2 {
+    color: #d63384;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
-        /* FOOTER */
-        .footer {
-            margin-top: 20px;
-        }
+.gallery-caption p {
+    color: #986184;
+    font-size: 14px;
+    line-height: 1.7;
+}
 
-        /* MOBILE */
-        @media (max-width: 600px) {
+/* ===== DOTS ===== */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+}
 
-            .gallery-header {
-                padding-top: 35px;
-            }
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #f3b6d5;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease;
+}
 
-            .gallery-header h1 {
-                font-size: 30px;
-            }
+.dot:hover {
+    background: #e754a6;
+}
 
-            .gallery-slider {
-                padding: 20px 15px;
-            }
+.dot.active {
+    background: #d63384;
+    transform: scale(1.3);
+}
 
-            .slider-image {
-                max-width: 320px;
-                height: 300px;
-            }
+/* ===== PINK FOOTER ===== */
+.footer {
+    width: 96% !important;
+    max-width: 1250px !important;
+    margin: 20px auto 25px !important;
+    background: linear-gradient(135deg, #ffe3f1, #ffcce5, #ffd9ed) !important;
+    border: 2px solid #ffb6d7 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 5px 20px rgba(214, 51, 132, 0.12) !important;
+    overflow: hidden !important;
+}
 
-            .slider-controls {
-                gap: 15px;
-            }
+.footer-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 30px !important;
+    flex-wrap: wrap !important;
+    padding: 25px 30px !important;
+    background: transparent !important;
+}
 
-            .gallery-caption h2 {
-                font-size: 21px;
-            }
-        }
+/* STAY CONNECTED */
+.footer-info {
+    flex: 1 !important;
+    min-width: 250px !important;
+    text-align: center !important;
+}
 
-    </style>
+.footer-info h2 {
+    color: #d63384 !important;
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
+}
+
+.footer-info p {
+    color: #925d7c !important;
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+    max-width: 430px !important;
+    margin: auto !important;
+}
+
+/* MY SOCIALS */
+.footer-socials {
+    min-width: 220px !important;
+    text-align: center !important;
+}
+
+.footer-socials h2 {
+    color: #d63384 !important;
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 12px !important;
+}
+
+.social-links a {
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 50% !important;
+    text-decoration: none !important;
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    transition: 0.3s ease !important;
+}
+
+/* FACEBOOK */
+.social-links a:first-child {
+    background: #1877f2 !important;
+}
+
+.social-links a:first-child:hover {
+    transform: translateY(-4px) !important;
+    background: #0d5ec9 !important;
+}
+
+/* INSTAGRAM */
+.social-links a:last-child {
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7) !important;
+}
+
+.social-links a:last-child:hover {
+    transform: translateY(-4px) !important;
+    opacity: 0.85 !important;
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+    text-align: center !important;
+    background: #ffcce5 !important;
+    border-top: 1px solid #ffb6d7 !important;
+    padding: 12px 10px !important;
+    color: #925d7c !important;
+    font-size: 12px !important;
+}
+
+.footer-bottom p {
+    margin: 0 !important;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+
+    /* LEFT ALIGNED AND HORIZONTAL */
+    nav.navbar {
+        overflow-x: auto !important;
+    }
+
+    nav.navbar ul.nav-list {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        min-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    nav.navbar ul.nav-list li {
+        flex-direction: row !important;
+        flex-shrink: 0 !important;
+    }
+
+    nav.navbar ul.nav-list li a.nav-link {
+        padding: 18px 20px !important;
+        font-size: 15px !important;
+    }
+
+    .gallery-header {
+        padding-top: 35px;
+    }
+
+    .gallery-header h1 {
+        font-size: 30px;
+    }
+
+    .gallery-slider {
+        padding: 20px 15px;
+    }
+
+    .slider-image {
+        max-width: 320px;
+        height: 300px;
+    }
+
+    .slider-controls {
+        gap: 15px;
+    }
+
+    .gallery-caption h2 {
+        font-size: 21px;
+    }
+
+    .footer-container {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 22px 15px !important;
+    }
+
+    .footer-info,
+    .footer-socials {
+        width: 100% !important;
+    }
+
+    .footer {
+        width: 94% !important;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
-            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+<!-- ===== NAVIGATION BAR ===== -->
+<nav class="navbar">
+    <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+</nav>
 
-    <!-- GALLERY HEADER -->
-    <header class="gallery-header">
-        <h1>My Gallery</h1>
-        <p>Every picture tells a story and keeps a beautiful memory.</p>
-    </header>
+<!-- ===== GALLERY HEADER ===== -->
+<header class="gallery-header">
+    <h1>My Gallery</h1>
+    <p>Every picture tells a story and keeps a beautiful memory.</p>
+</header>
 
-    <!-- IMAGE SLIDER -->
-    <main class="gallery-container">
+<!-- ===== IMAGE SLIDER ===== -->
+<main class="gallery-container">
 
-        <div class="gallery-slider">
+    <div class="gallery-slider">
 
-            <img
-                id="sliderImage"
-                class="slider-image"
-                src="Future me.jpg"
-                alt="My Future Self"
-            >
+        <img
+            id="sliderImage"
+            class="slider-image"
+            src="Future me.jpg"
+            alt="My Future Self"
+        >
 
-            <div class="slider-controls">
+        <div class="slider-controls">
 
-                <button class="slider-btn" id="prevBtn"
-                        aria-label="Previous picture">
-                    &#10094;
-                </button>
+            <button class="slider-btn" id="prevBtn"
+                    aria-label="Previous picture">
+                &#10094;
+            </button>
 
-                <button class="slider-btn" id="nextBtn"
-                        aria-label="Next picture">
-                    &#10095;
-                </button>
-
-            </div>
-
-            <!-- CAPTION -->
-            <div class="gallery-caption">
-                <h2 id="sliderTitle">My Future Me</h2>
-
-                <p id="sliderDescription">
-                    Dreaming big and working hard for my future.
-                </p>
-            </div>
-
-            <!-- SLIDER DOTS -->
-            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn" id="nextBtn"
+                    aria-label="Next picture">
+                &#10095;
+            </button>
 
         </div>
 
-    </main>
+        <!-- CAPTION -->
+        <div class="gallery-caption">
+            <h2 id="sliderTitle">My Future Me</h2>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <div class="footer-info">
-                <h2>Stay Connected!</h2>
-
-                <p>
-                    Thank you for visiting my portfolio.
-                    These pictures represent my dreams,
-                    family, friendships, and school journey.
-                </p>
-            </div>
-
-            <div class="footer-socials">
-                <h2>My Socials</h2>
-
-                <div class="social-links">
-
-                    <a href="https://www.facebook.com/profile.php?id=61576512509551"
-                       target="_blank">f</a>
-
-                    <a href="https://www.instagram.com/"
-                       target="_blank">◎</a>
-
-                </div>
-            </div>
-
+            <p id="sliderDescription">
+                Dreaming big and working hard for my future.
+            </p>
         </div>
 
-        <div class="footer-bottom">
-            <p>© 2026 My Portfolio. All Rights Reserved.</p>
+        <!-- DOTS -->
+        <div class="slider-dots" id="sliderDots"></div>
+
+    </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-info">
+            <h2>Stay Connected!</h2>
+
+            <p>
+                Thank you for visiting my portfolio.
+                These pictures represent my dreams,
+                family, friendships, and school journey.
+            </p>
         </div>
 
-    </footer>
+        <div class="footer-socials">
+            <h2>My Socials</h2>
 
-    <!-- JAVASCRIPT SLIDER -->
-    <script>
+            <div class="social-links">
 
-        const galleryPictures = [
-            {
-                image: "Future me.jpg",
-                title: "My Future Me",
-                description: "Dreaming big and working hard for my future."
-            },
-            {
-                image: "Family.jpg",
-                title: "My Family",
-                description: "My greatest inspiration and source of strength."
-            },
-            {
-                image: "Friend.jpg",
-                title: "My Friends",
-                description: "Beautiful memories and unforgettable moments."
-            },
-            {
-                image: "ME.jpg",
-                title: "Me in Uniform",
-                description: "A student with dreams, goals, and determination."
-            }
-        ];
+                <a href="https://www.facebook.com/profile.php?id=61576512509551"
+                   target="_blank">f</a>
 
-        let currentIndex = 0;
+                <a href="https://www.instagram.com/"
+                   target="_blank">◎</a>
 
-        const sliderImage = document.getElementById("sliderImage");
-        const sliderTitle = document.getElementById("sliderTitle");
-        const sliderDescription = document.getElementById("sliderDescription");
-        const sliderDots = document.getElementById("sliderDots");
+            </div>
+        </div>
 
-        // DISPLAY PICTURE
-        function showPicture(index) {
+    </div>
 
-            currentIndex = index;
+    <div class="footer-bottom">
+        <p>© 2026 My Portfolio. All Rights Reserved.</p>
+    </div>
 
-            sliderImage.src = galleryPictures[currentIndex].image;
-            sliderTitle.textContent = galleryPictures[currentIndex].title;
-            sliderDescription.textContent =
-                galleryPictures[currentIndex].description;
+</footer>
 
-            // UPDATE DOTS
-            sliderDots.innerHTML = "";
+<!-- ===== JAVASCRIPT SLIDER ===== -->
+<script>
 
-            galleryPictures.forEach((picture, i) => {
+const galleryPictures = [
+    {
+        image: "Future me.jpg",
+        title: "My Future Me",
+        description: "Dreaming big and working hard for my future."
+    },
+    {
+        image: "Family.jpg",
+        title: "My Family",
+        description: "My greatest inspiration and source of strength."
+    },
+    {
+        image: "Friend.jpg",
+        title: "My Friends",
+        description: "Beautiful memories and unforgettable moments."
+    },
+    {
+        image: "ME.jpg",
+        title: "Me in Uniform",
+        description: "A student with dreams, goals, and determination."
+    }
+];
 
-                const dot = document.createElement("button");
+let currentIndex = 0;
 
-                dot.className = "dot";
+const sliderImage = document.getElementById("sliderImage");
+const sliderTitle = document.getElementById("sliderTitle");
+const sliderDescription = document.getElementById("sliderDescription");
+const sliderDots = document.getElementById("sliderDots");
 
-                if (i === currentIndex) {
-                    dot.classList.add("active");
-                }
+/* DISPLAY PICTURE */
+function showPicture(index) {
 
-                dot.setAttribute("aria-label", "Show picture " + (i + 1));
+    currentIndex = index;
 
-                dot.onclick = function() {
-                    showPicture(i);
-                };
+    sliderImage.src = galleryPictures[currentIndex].image;
+    sliderTitle.textContent = galleryPictures[currentIndex].title;
+    sliderDescription.textContent =
+        galleryPictures[currentIndex].description;
 
-                sliderDots.appendChild(dot);
+    sliderDots.innerHTML = "";
 
-            });
+    galleryPictures.forEach((picture, i) => {
 
+        const dot = document.createElement("button");
+
+        dot.className = "dot";
+
+        if (i === currentIndex) {
+            dot.classList.add("active");
         }
 
-        // NEXT BUTTON
-        document.getElementById("nextBtn").onclick = function() {
+        dot.setAttribute("aria-label", "Show picture " + (i + 1));
 
-            currentIndex++;
-
-            if (currentIndex >= galleryPictures.length) {
-                currentIndex = 0;
-            }
-
-            showPicture(currentIndex);
-
+        dot.onclick = function() {
+            showPicture(i);
         };
 
-        // PREVIOUS BUTTON
-        document.getElementById("prevBtn").onclick = function() {
+        sliderDots.appendChild(dot);
 
-            currentIndex--;
+    });
 
-            if (currentIndex < 0) {
-                currentIndex = galleryPictures.length - 1;
-            }
+}
 
-            showPicture(currentIndex);
+/* NEXT BUTTON */
+document.getElementById("nextBtn").onclick = function() {
 
-        };
+    currentIndex++;
 
-        // FIRST PICTURE
-        showPicture(0);
+    if (currentIndex >= galleryPictures.length) {
+        currentIndex = 0;
+    }
 
-    </script>
+    showPicture(currentIndex);
+
+};
+
+/* PREVIOUS BUTTON */
+document.getElementById("prevBtn").onclick = function() {
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = galleryPictures.length - 1;
+    }
+
+    showPicture(currentIndex);
+
+};
+
+/* FIRST PICTURE */
+showPicture(0);
+
+</script>
 
 </body>
 </html>
-
 
