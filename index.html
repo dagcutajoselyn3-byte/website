@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,32 +9,35 @@
 <link rel="stylesheet" href="menu.css">
 
 <style>
-/* HOME PAGE */
+
+/* HOME PAGE PINK BACKGROUND */
 .home-page {
-    background: #fbf2fc;
-    color: #542044;
+    background: linear-gradient(135deg, #fff0f6, #ffe1ef, #ffd6e8);
+    color: #754565;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
+    margin: 0;
 }
 
 /* HEADER */
 .home-header {
-    background: linear-gradient(90deg, #f3e2f7, #ead2f1);
+    background: linear-gradient(90deg, #ffc5df, #ffafd5, #ffd1e7);
     text-align: center;
     padding: 17px 10px;
+    border-bottom: 2px solid #f5a6ce;
 }
 
 .home-header h1 {
     font-size: 26px;
     margin: 0 0 3px;
-    color: #642657;
+    color: #9e2769;
 }
 
 .home-header p {
     font-size: 17px;
     font-weight: bold;
     margin: 0;
-    color: #642657;
+    color: #9e2769;
 }
 
 /* WELCOME BOX */
@@ -42,10 +46,10 @@
     max-width: 635px;
     margin: 20px auto;
     padding: 22px 24px;
-    background: #641b50;
-    color: #fff5ff;
-    border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(80, 20, 65, 0.20);
+    background: #d63384;
+    color: #fff5fa;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.20);
     text-align: center;
 }
 
@@ -63,14 +67,14 @@
 .home-content h3 {
     font-size: 14px;
     text-align: left;
-    color: #f3c9ef;
+    color: #ffe0ef;
     margin-top: 17px;
     margin-bottom: 8px;
 }
 
 .home-content hr {
     border: none;
-    border-top: 1px solid #d8a6d0;
+    border-top: 1px solid #ffb8d9;
     margin: 10px 0;
 }
 
@@ -97,25 +101,39 @@
 .home-footer h3 {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #642657;
+    color: #b32b79;
 }
 
 .home-footer p {
     font-size: 12px;
     line-height: 1.7;
     margin: 0;
+    color: #754565;
 }
 
+/* SOCIAL MEDIA */
 .home-socials {
     margin-top: 10px;
 }
 
 .home-socials a {
-    color: #8e2581;
+    display: inline-block;
+    color: white;
+    background: #d63384;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     margin: 0 7px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.home-socials a:hover {
+    background: #a91e66;
+    transform: translateY(-3px);
 }
 
 /* SMALL SCREEN */
@@ -153,6 +171,7 @@
         width: 100%;
     }
 }
+
 </style>
 </head>
 
