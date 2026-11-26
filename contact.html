@@ -8,18 +8,21 @@
 
     <title>Contact</title>
 
-    <!-- CONNECT SA MENU CSS -->
     <link rel="stylesheet" href="menu.css">
 
     <style>
 
-        /* PINK BACKGROUND */
+        /* ===== PINK CONTACT DESIGN ===== */
+
         body {
             background: linear-gradient(135deg, #fff0f6, #ffe1ef, #ffd6e8);
             color: #754565;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* CONTACT PAGE */
+        /* CONTACT SECTION */
         .contact-section {
             flex: 1;
             text-align: center;
@@ -118,21 +121,100 @@
             transition: 0.3s ease;
         }
 
-        /* INSTAGRAM BUTTON */
         .instagram-btn {
             background: linear-gradient(45deg, #f09433, #e1306c, #833ab4);
         }
 
-        /* FACEBOOK BUTTON */
         .facebook-btn {
             background: #1877f2;
         }
 
-        /* BUTTON HOVER */
         .instagram-btn:hover,
         .facebook-btn:hover {
             transform: translateY(-3px);
             opacity: 0.85;
+        }
+
+        /* ===== FOOTER ===== */
+
+        .footer {
+            margin-top: 30px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 25px 30px;
+            background: linear-gradient(135deg, #ffd6e8, #ffc5df);
+            border-top: 1px solid #f3b6d5;
+        }
+
+        .footer-info,
+        .footer-socials {
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .footer-info h2,
+        .footer-socials h2 {
+            color: #d63384;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .footer-info p {
+            color: #754565;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* SOCIAL LINKS */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .social-links a:first-child {
+            background: #1877f2;
+        }
+
+        .social-links a:last-child {
+            background: linear-gradient(45deg, #f09433, #e1306c, #833ab4);
+        }
+
+        .social-links a:hover {
+            transform: scale(1.15);
+        }
+
+        /* FOOTER BOTTOM */
+        .footer-bottom {
+            background: #f8b9d7;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .footer-bottom p {
+            color: #754565;
+            font-size: 12px;
         }
 
         /* SMALL SCREEN */
@@ -158,6 +240,10 @@
             .facebook-card {
                 width: 160px;
                 padding: 13px 8px;
+            }
+
+            .footer-container {
+                padding: 20px 15px;
             }
 
         }
@@ -232,6 +318,49 @@
         </div>
 
     </section>
+
+    <!-- FOOTER: STAY CONNECTED + MY SOCIALS -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- STAY CONNECTED -->
+            <div class="footer-info">
+                <h2>Stay Connected!</h2>
+
+                <p>
+                    Thank you for visiting my portfolio.
+                    Connect and contact with me through my social
+                    media accounts. Your support and feedback
+                    are appreciated!
+                </p>
+            </div>
+
+            <!-- MY SOCIALS -->
+            <div class="footer-socials">
+                <h2>My Socials</h2>
+
+                <div class="social-links">
+
+                    <a href="https://www.facebook.com/profile.php?id=61576512509551"
+                       target="_blank"
+                       rel="noopener noreferrer">f</a>
+
+                    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=cu0s8pt"
+                       target="_blank"
+                       rel="noopener noreferrer">◎</a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="footer-bottom">
+            <p>© 2026 EFN Corporation. All Rights Reserved.</p>
+        </div>
+
+    </footer>
 
 </body>
 </html>
