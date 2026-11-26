@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+
+<link rel="stylesheet" href="menu.css">
+
+<style>
+
+/* MAIN ABOUT BOX */
+.about-section {
+    max-width: 1250px;
+    width: 94%;
+    margin: 35px auto;
+    padding: 30px;
+    background: #fff7fc;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px #d77cac40;
+}
+
+.about-section h1 {
+    text-align: center;
+    color: #d34e99;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #a45a83;
+    margin-bottom: 25px;
+}
+
+/* SIDE BY SIDE LAYOUT */
+.about-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr) !important;
+    align-items: start !important;
+    gap: 22px !important;
+    width: 100% !important;
+}
+
+.about-left {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* PROFILE CARD */
+.profile-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    background: #fff0f8;
+    border: 1px solid #f0b7d7;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 18px #d77cac30;
+    margin: 0 !important;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid #f3b3d5;
+    margin: 0 auto 18px;
+    display: block;
+}
+
+.profile-card h2 {
+    color: #c74389;
+    margin-bottom: 12px;
+    font-size: 26px;
+}
+
+.profile-card p {
+    color: #754565;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.profile-card strong {
+    color: #b83d83;
+}
+
+/* ACCORDION ITEMS */
+.about-item {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #f0b7d7;
+}
+
+.about-toggle {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #f7b5d9, #e879b5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-toggle:hover {
+    background: #d34e99;
+}
+
+.about-content {
+    display: none;
+    background: #fff0f8;
+    padding: 20px;
+    color: #754565;
+    line-height: 1.8;
+    animation: appear 0.3s ease;
+}
+
+.about-content.show {
+    display: block;
+}
+
+.about-content h2 {
+    color: #c74389;
+    margin-bottom: 8px;
+}
+
+/* ANIMATION */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SMALL SCREEN */
+@media(max-width: 750px) {
+    .about-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .about-section {
+        padding: 20px;
+    }
+
+    .profile-card {
+        width: 100% !important;
+    }
+}
+
+@media(max-width: 600px) {
+    .about-section {
+        margin: 20px auto;
+        padding: 18px;
+    }
+
+    .about-toggle {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .profile-picture {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+
+    <h1>♡ About Me ♡</h1>
+
+    <p class="subtitle">
+        Click each section to discover more about me.
+    </p>
+
+    <!-- SIDE BY SIDE CONTENT -->
+    <div class="about-layout">
+
+        <!-- LEFT SIDE -->
+        <div class="about-left">
+
+            <!-- MY GOALS -->
+            <div class="about-item">
+
+                <button class="about-toggle" onclick="toggleAbout(this)">
+                     My Goals <span>＋</span>
+                </button>
+
+                <div class="about-content">
+                    <h2>My Goals</h2>
+
+                    <p>
+                        My goal is to finish my studies, achieve my dreams,
+                        make my family proud, and have a successful future.
+                        I want to become a better person, gain more knowledge,
+                        and learn new skills that will help me in life. I also
+                        dream of having a stable job, becoming financially
+                        independent, and giving my family a comfortable life
+                        as a way of thanking them for all their love,
+                        sacrifices, and support. I want to overcome every
+                        challenge, never give up on my dreams, and prove
+                        to myself that all my hard work and sacrifices
+                        will be worth it. Most importantly, I want to
+                        build a bright future, help the people I love,
+                        and achieve all the things I have been working
+                        hard for.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- FAVORITE SNACK -->
+            <div class="about-item">
+
+                <button class="about-toggle" onclick="toggleAbout(this)">
+                     My Favorite Snack <span>＋</span>
+                </button>
+
+                <div class="about-content">
+                    <h2>My Favorite Snack</h2>
+
+                    <p>
+                        My favorite snack is French fries.
+                        I love eating it because it is delicious
+                        and makes me happy. I enjoy its crispy texture
+                        and salty taste, especially when it is freshly cooked.
+                        I also love eating it with ketchup or cheese dip
+                        because it makes the flavor even better. French fries
+                        are one of my favorite snacks whenever I feel hungry
+                        or want to enjoy something tasty. For me, it is a
+                        simple snack, but it always makes my day better.
+                        I can eat it anytime, whether I am relaxing,
+                        watching movies, or spending time with my friends
+                        and family.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- MY HOBBY -->
+            <div class="about-item">
+
+                <button class="about-toggle" onclick="toggleAbout(this)">
+                     My Hobby <span>＋</span>
+                </button>
+
+                <div class="about-content">
+                    <h2>My Hobby</h2>
+
+                    <p>
+                        My hobby is spending time with my family and friends.
+                        I enjoy doing it during my free time because it makes
+                        me feel happy and relaxed. I love talking, laughing,
+                        sharing stories, and creating wonderful memories
+                        with them. I also enjoy going to different places,
+                        eating together, and doing fun activities whenever
+                        we have time. Spending time with the people I love
+                        helps me forget my stress and makes me feel
+                        appreciated and loved. For me, these simple
+                        moments are very special because they bring
+                        happiness into my life. I believe that spending
+                        quality time with family and friends is one of
+                        the best ways to make life more meaningful
+                        and memorable.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- FAVORITE TO WATCH -->
+            <div class="about-item">
+
+                <button class="about-toggle" onclick="toggleAbout(this)">
+                     My Favorite to Watch <span>＋</span>
+                </button>
+
+                <div class="about-content">
+                    <h2>My Favorite to Watch</h2>
+
+                    <p>
+                        I love watching Superbook because it is very
+                        interesting and teaches me about the Bible.
+                        I enjoy watching its stories because they are
+                        entertaining, meaningful, and full of important
+                        lessons. It helps me learn more about God,
+                        understand Bible stories, and discover the
+                        importance of having faith, kindness, love,
+                        and respect for others. I also like how the
+                        characters experience different adventures
+                        while learning valuable lessons from the Bible.
+                        Every episode teaches me something new that
+                        I can apply to my everyday life. Watching
+                        Superbook is not only enjoyable but also helps
+                        me grow in my knowledge and understanding
+                        of God's words. It is one of my favorite shows
+                        to watch during my free time.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- FAVORITE GAMES -->
+            <div class="about-item">
+
+                <button class="about-toggle" onclick="toggleAbout(this)">
+                     My Favorite Games <span>＋</span>
+                </button>
+
+                <div class="about-content">
+                    <h2>My Favorite Games</h2>
+
+                    <p>
+                        My favorite game is Minecraft. I enjoy playing
+                        it for fun whenever I have free time. I love
+                        this game because it allows me to explore
+                        different places, build houses, create beautiful
+                        structures, and discover new things. It also
+                        challenges my creativity and imagination because
+                        I can design and build anything I want. I enjoy
+                        exploring the world, collecting materials,
+                        and completing different adventures in the game.
+                        Sometimes, I also play with my friends because
+                        it makes the game more exciting and enjoyable.
+                        Playing Minecraft helps me relax, especially
+                        when I feel tired from school activities.
+                        For me, it is not just a game but also a fun
+                        way to spend my free time and express my creativity.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE: PROFILE -->
+        <div class="profile-card">
+
+            <img src="Future me.jpg"
+                 alt="My Profile Picture"
+                 class="profile-picture">
+
+            <h2>Hello! Welcome.</h2>
+
+            <p>
+                Hello! My name is Joselyn F. Dagcuta.
+                I am a Grade 12 student from 12-Copper.
+                Welcome to my personal website!
+            </p>
+
+            <p>
+                <strong>Section:</strong> 12 - Copper
+            </p>
+
+            <p>
+                <strong>Strand:</strong> ICT
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+
+function toggleAbout(button) {
+
+    const content = button.nextElementSibling;
+    const icon = button.querySelector("span");
+
+    // CLOSE THE OTHER CONTENT
+    document.querySelectorAll(".about-content").forEach(item => {
+        if (item !== content) {
+            item.classList.remove("show");
+        }
+    });
+
+    // RESET OTHER ICONS
+    document.querySelectorAll(".about-toggle span").forEach(item => {
+        if (item !== icon) {
+            item.innerHTML = "＋";
+        }
+    });
+
+    // OPEN OR CLOSE CLICKED SECTION
+    content.classList.toggle("show");
+
+    if (content.classList.contains("show")) {
+        icon.innerHTML = "−";
+    } else {
+        icon.innerHTML = "＋";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
