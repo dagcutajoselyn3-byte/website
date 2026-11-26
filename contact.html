@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,13 @@
     <link rel="stylesheet" href="menu.css">
 
     <style>
+
+        /* PINK BACKGROUND */
+        body {
+            background: linear-gradient(135deg, #fff0f6, #ffe1ef, #ffd6e8);
+            color: #754565;
+        }
+
         /* CONTACT PAGE */
         .contact-section {
             flex: 1;
@@ -18,15 +26,17 @@
             padding: 35px 15px;
         }
 
+        /* TITLE */
         .contact-section h1 {
-            color: #ff80c0;
+            color: #d63384;
             font-size: 38px;
             margin-bottom: 12px;
-            text-shadow: 0 0 12px rgba(255, 77, 166, 0.3);
+            text-shadow: 0 0 12px rgba(255, 77, 166, 0.2);
         }
 
+        /* SUBTITLE */
         .contact-subtitle {
-            color: #e8cce2;
+            color: #986184;
             margin-bottom: 30px;
             font-size: 15px;
         }
@@ -45,16 +55,25 @@
         .facebook-card {
             width: 220px;
             padding: 18px 15px;
-            background: linear-gradient(145deg, #fff0f6, #ffe0ed);
-            color: #5a1741;
+            background: linear-gradient(145deg, #ffffff, #fff0f6);
+            color: #754565;
             border-radius: 16px;
-            box-shadow: 0 5px 18px rgba(255, 80, 160, 0.15);
-            border: 1px solid #ffb6d5;
+            box-shadow: 0 5px 18px rgba(214, 51, 132, 0.12);
+            border: 1px solid #ffc5df;
+            transition: 0.3s ease;
+        }
+
+        /* CARD HOVER */
+        .instagram-card:hover,
+        .facebook-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 22px rgba(214, 51, 132, 0.2);
         }
 
         .instagram-card h2,
         .facebook-card h2 {
             font-size: 21px;
+            color: #d63384;
             margin-bottom: 7px;
         }
 
@@ -62,15 +81,17 @@
         .facebook-card p {
             font-size: 13px;
             margin: 7px 0;
+            color: #986184;
         }
 
         .instagram-card h3,
         .facebook-card h3 {
             font-size: 16px;
+            color: #9b3f78;
             margin-top: 8px;
         }
 
-        /* SMALL PROFILE PICTURES */
+        /* PROFILE PICTURES */
         .contact-section img.profile-picture {
             width: 75px;
             height: 75px;
@@ -79,8 +100,8 @@
             border-radius: 50%;
             display: block;
             margin: 12px auto;
-            border: 3px solid white;
-            box-shadow: 0 3px 8px rgba(100, 20, 60, 0.15);
+            border: 3px solid #ffc5df;
+            box-shadow: 0 3px 8px rgba(214, 51, 132, 0.15);
         }
 
         /* BUTTONS */
@@ -97,14 +118,17 @@
             transition: 0.3s ease;
         }
 
+        /* INSTAGRAM BUTTON */
         .instagram-btn {
             background: linear-gradient(45deg, #f09433, #e1306c, #833ab4);
         }
 
+        /* FACEBOOK BUTTON */
         .facebook-btn {
             background: #1877f2;
         }
 
+        /* BUTTON HOVER */
         .instagram-btn:hover,
         .facebook-btn:hover {
             transform: translateY(-3px);
@@ -113,6 +137,7 @@
 
         /* SMALL SCREEN */
         @media screen and (max-width: 500px) {
+
             .contact-section {
                 padding: 25px 10px;
             }
@@ -134,7 +159,9 @@
                 width: 160px;
                 padding: 13px 8px;
             }
+
         }
+
     </style>
 </head>
 
