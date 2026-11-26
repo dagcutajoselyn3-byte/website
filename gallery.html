@@ -1,21 +1,24 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Gallery</title>
+
 <link rel="stylesheet" href="menu.css">
 
 <style>
+
+/* ===== BACKGROUND ===== */
 body {
     background: linear-gradient(135deg, #fff0f6, #ffe0ef, #ffd6e8) !important;
     color: #754565;
     margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* ===== NAVBAR: SMALL, HORIZONTAL, LEFT ===== */
+/* ===== NAVBAR ===== */
 nav.navbar {
     width: 100% !important;
     display: block !important;
@@ -68,56 +71,63 @@ nav.navbar ul.nav-list li a.nav-link.active {
     color: white !important;
 }
 
-/* ===== GALLERY HEADER ===== */
+/* ===== HEADER ===== */
 .gallery-header {
     text-align: center;
-    padding: 35px 20px 15px;
+    padding: 30px 20px 10px;
 }
 
 .gallery-header h1 {
-    font-size: 32px;
+    font-size: 30px;
     color: #d63384;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+    margin: 0 0 8px;
 }
 
 .gallery-header p {
     color: #986184;
-    font-size: 14px;
+    font-size: 13px;
+    margin: 0;
 }
 
-/* ===== GALLERY ===== */
+/* ===== GALLERY MAIN LAYOUT ===== */
 .gallery-container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 35px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 20px 40px;
 }
 
+/* ===== GALLERY CARD ===== */
 .gallery-slider {
     width: 100%;
-    max-width: 580px;
-    text-align: center;
-    background: rgba(255,255,255,0.65);
-    padding: 25px 20px;
-    border-radius: 25px;
-    border: 1px solid #ffc5df;
-    box-shadow: 0 10px 35px rgba(214,51,132,0.12);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 25px;
+    box-sizing: border-box;
 }
 
-/* ===== SMALL PICTURE ===== */
+/* ===== IMAGE SIDE ===== */
+.gallery-image-side {
+    position: relative;
+    width: 48%;
+    max-width: 400px;
+    flex-shrink: 0;
+}
+
 .slider-image {
     width: 100%;
-    max-width: 280px;
-    height: 280px;
+    height: 390px;
     object-fit: contain;
     display: block;
-    margin: auto;
-    border-radius: 18px;
     background: #fff7fb;
-    padding: 6px;
+    border-radius: 18px;
     border: 3px solid #ffc5df;
-    box-shadow: 0 0 25px rgba(231,84,166,0.18);
+    box-shadow: 0 8px 25px rgba(214,51,132,0.15);
     transition: 0.4s ease;
 }
 
@@ -125,65 +135,84 @@ nav.navbar ul.nav-list li a.nav-link.active {
     transform: scale(1.02);
 }
 
-/* ===== BUTTONS ===== */
-.slider-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    margin-top: 18px;
-}
-
+/* ===== IMAGE ARROWS ===== */
 .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 42px;
-    height: 42px;
+    height: 48px;
     border: none;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #e754a6, #ff91c8);
+    background: rgba(214,51,132,0.85);
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .slider-btn:hover {
-    background: #d63384;
-    transform: scale(1.12);
+    background: #a91e66;
 }
 
-/* ===== CAPTION ===== */
+#prevBtn {
+    left: 0;
+    border-radius: 0 10px 10px 0;
+}
+
+#nextBtn {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+}
+
+/* ===== DESCRIPTION CARD ===== */
 .gallery-caption {
-    margin-top: 18px;
+    width: 42%;
+    max-width: 360px;
+    background: linear-gradient(135deg, #7b174f, #541336);
+    color: #fff5fa;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 7px 20px rgba(100,25,65,0.18);
+    box-sizing: border-box;
 }
 
 .gallery-caption h2 {
-    color: #d63384;
-    font-size: 22px;
-    margin-bottom: 8px;
+    color: #fff5fa;
+    font-size: 23px;
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+.gallery-caption hr {
+    border: none;
+    border-top: 1px solid #f6b5d5;
+    margin: 12px 0 18px;
 }
 
 .gallery-caption p {
-    color: #986184;
+    color: #ffe8f3;
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.9;
+    text-align: justify;
+    margin: 0;
 }
 
 /* ===== DOTS ===== */
 .slider-dots {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 18px;
+    gap: 9px;
+    margin-top: 20px;
 }
 
 .dot {
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: #f3b6d5;
     cursor: pointer;
     border: none;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .dot:hover {
@@ -225,13 +254,13 @@ nav.navbar ul.nav-list li a.nav-link.active {
 .footer-info h2,
 .footer-socials h2 {
     color: #d63384 !important;
-    font-size: 22px !important;
+    font-size: 20px !important;
     margin-bottom: 12px !important;
 }
 
 .footer-info p {
     color: #925d7c !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
     line-height: 1.8 !important;
     max-width: 430px !important;
     margin: auto !important;
@@ -293,8 +322,8 @@ nav.navbar ul.nav-list li a.nav-link.active {
     margin: 0 !important;
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 600px) {
+/* ===== RESPONSIVE ===== */
+@media (max-width: 750px) {
 
     nav.navbar {
         overflow-x: auto !important;
@@ -317,29 +346,42 @@ nav.navbar ul.nav-list li a.nav-link.active {
         font-size: 13px !important;
     }
 
-    .gallery-header {
-        padding-top: 30px;
+    .gallery-header h1 {
+        font-size: 26px;
     }
 
-    .gallery-header h1 {
-        font-size: 28px;
+    .gallery-container {
+        width: 95%;
+        margin: 20px auto;
     }
 
     .gallery-slider {
-        padding: 18px 12px;
+        flex-direction: column;
+        gap: 22px;
+        padding: 15px;
+    }
+
+    .gallery-image-side {
+        width: 100%;
+        max-width: 350px;
     }
 
     .slider-image {
-        max-width: 240px;
-        height: 240px;
+        height: 320px;
     }
 
-    .slider-controls {
-        gap: 15px;
+    .gallery-caption {
+        width: 100%;
+        max-width: 350px;
+        padding: 22px;
     }
 
     .gallery-caption h2 {
         font-size: 20px;
+    }
+
+    .gallery-caption p {
+        font-size: 13px;
     }
 
     .footer-container {
@@ -357,6 +399,7 @@ nav.navbar ul.nav-list li a.nav-link.active {
         width: 94% !important;
     }
 }
+
 </style>
 </head>
 
@@ -376,59 +419,79 @@ nav.navbar ul.nav-list li a.nav-link.active {
 <!-- ===== HEADER ===== -->
 <header class="gallery-header">
     <h1>My Gallery</h1>
-    <p>Every picture tells a story and keeps a beautiful memory.</p>
+    <p>A collection of pictures that reflect my life, memories, and dreams.</p>
 </header>
 
-<!-- ===== SLIDER ===== -->
+<!-- ===== GALLERY ===== -->
 <main class="gallery-container">
+
     <div class="gallery-slider">
 
-        <img id="sliderImage" class="slider-image"
-             src="Future me.jpg" alt="My Future Self">
+        <!-- IMAGE -->
+        <div class="gallery-image-side">
 
-        <div class="slider-controls">
-            <button class="slider-btn" id="prevBtn" aria-label="Previous picture">
+            <img id="sliderImage"
+                 class="slider-image"
+                 src="Future me.jpg"
+                 alt="Gallery picture">
+
+            <button class="slider-btn" id="prevBtn"
+                    aria-label="Previous picture">
                 &#10094;
             </button>
 
-            <button class="slider-btn" id="nextBtn" aria-label="Next picture">
+            <button class="slider-btn" id="nextBtn"
+                    aria-label="Next picture">
                 &#10095;
             </button>
+
         </div>
 
+        <!-- DESCRIPTION -->
         <div class="gallery-caption">
-            <h2 id="sliderTitle">My Future Me</h2>
-            <p id="sliderDescription">
-                Dreaming big and working hard for my future.
-            </p>
-        </div>
 
-        <div class="slider-dots" id="sliderDots"></div>
+            <h2 id="sliderTitle">My Future Me</h2>
+
+            <hr>
+
+            <p id="sliderDescription">
+                This picture reminds me of the goals I want to achieve.
+                It inspires me to stay focused, learn more, and keep
+                believing that my efforts will lead me to a better future.
+            </p>
+
+            <div class="slider-dots" id="sliderDots"></div>
+
+        </div>
 
     </div>
+
 </main>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
+
     <div class="footer-container">
 
         <div class="footer-info">
             <h2>Stay Connected!</h2>
+
             <p>
-                Thank you for visiting my portfolio.
-                These pictures represent my dreams,
-                family, friendships, and school journey.
+                Thank you for visiting my gallery.
+                Every photo has a special meaning and
+                reminds me of the moments I treasure.
             </p>
         </div>
 
         <div class="footer-socials">
             <h2>My Socials</h2>
+
             <div class="social-links">
                 <a href="https://www.facebook.com/profile.php?id=61576512509551"
-                   target="_blank">f</a>
+                   target="_blank" title="Facebook">f</a>
 
                 <a href="https://www.instagram.com/"
-                   target="_blank">◎</a>
+                   target="_blank" title="Instagram">◎</a>
             </div>
         </div>
 
@@ -437,31 +500,38 @@ nav.navbar ul.nav-list li a.nav-link.active {
     <div class="footer-bottom">
         <p>© 2026 My Portfolio. All Rights Reserved.</p>
     </div>
+
 </footer>
 
-<!-- ===== SLIDER SCRIPT ===== -->
+<!-- ===== JAVASCRIPT SLIDER ===== -->
 <script>
+
 const galleryPictures = [
+
     {
         image: "Future me.jpg",
         title: "My Future Me",
-        description: "Dreaming big and working hard for my future."
+        description: "This picture represents my dreams and goals for the future. It reminds me to keep working hard, improve my skills, and believe in myself."
     },
+
     {
         image: "Family.jpg",
-        title: "My Family",
-        description: "My greatest inspiration and source of strength."
+        title: "My Future Family",
+        description: "I dream of having a happy and peaceful family someday. This reminds me that love, understanding, respect, and spending time together are important in building a strong family."
     },
+
     {
         image: "Friend.jpg",
         title: "My Friends",
-        description: "Beautiful memories and unforgettable moments."
+        description: "My friends make ordinary days more enjoyable. They give me laughter, support, and memories that I will always appreciate and carry with me."
     },
+
     {
         image: "ME.jpg",
-        title: "Me in Uniform",
-        description: "A student with dreams, goals, and determination."
+        title: "Me",
+        description: "This picture represents who I am today. I am still learning, growing, and discovering my strengths while doing my best to reach my dreams."
     }
+
 ];
 
 let currentIndex = 0;
@@ -471,18 +541,21 @@ const sliderTitle = document.getElementById("sliderTitle");
 const sliderDescription = document.getElementById("sliderDescription");
 const sliderDots = document.getElementById("sliderDots");
 
+/* DISPLAY PICTURE */
 function showPicture(index) {
+
     currentIndex = index;
 
     sliderImage.src = galleryPictures[currentIndex].image;
     sliderTitle.textContent = galleryPictures[currentIndex].title;
-    sliderDescription.textContent =
-        galleryPictures[currentIndex].description;
+    sliderDescription.textContent = galleryPictures[currentIndex].description;
 
     sliderDots.innerHTML = "";
 
     galleryPictures.forEach((picture, i) => {
+
         const dot = document.createElement("button");
+
         dot.className = "dot";
 
         if (i === currentIndex) {
@@ -496,10 +569,14 @@ function showPicture(index) {
         };
 
         sliderDots.appendChild(dot);
+
     });
+
 }
 
+/* NEXT BUTTON */
 document.getElementById("nextBtn").onclick = function() {
+
     currentIndex++;
 
     if (currentIndex >= galleryPictures.length) {
@@ -507,9 +584,12 @@ document.getElementById("nextBtn").onclick = function() {
     }
 
     showPicture(currentIndex);
+
 };
 
+/* PREVIOUS BUTTON */
 document.getElementById("prevBtn").onclick = function() {
+
     currentIndex--;
 
     if (currentIndex < 0) {
@@ -517,11 +597,15 @@ document.getElementById("prevBtn").onclick = function() {
     }
 
     showPicture(currentIndex);
+
 };
 
+/* INITIAL PICTURE */
 showPicture(0);
+
 </script>
 
 </body>
 </html>
+
 
