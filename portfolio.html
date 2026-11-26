@@ -1,15 +1,116 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+
     <link rel="stylesheet" href="menu.css">
+
+    <style>
+
+        /* PINK BACKGROUND */
+        body {
+            background: linear-gradient(135deg, #fff0f6, #ffe1ef, #ffd6e8);
+            color: #754565;
+        }
+
+        /* MAIN CONTENT */
+        .content {
+            width: 95%;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 25px 10px;
+            text-align: center;
+        }
+
+        /* TITLE */
+        .content h1 {
+            color: #d63384;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        /* DESCRIPTION */
+        .portfolio-description {
+            color: #986184;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        /* PROJECT GRID */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        /* SMALL PROJECT SQUARES */
+        .project-link {
+            text-decoration: none;
+            color: #9b3f78;
+            background: #fffafd;
+            border: 1px solid #f3b6d5;
+            border-radius: 10px;
+
+            height: 55px;
+            padding: 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+
+            box-shadow: 0 3px 8px rgba(214, 51, 132, 0.08);
+            transition: 0.3s ease;
+        }
+
+        /* HOVER */
+        .project-link:hover {
+            background: #e754a6;
+            color: white;
+            border-color: #e754a6;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(214, 51, 132, 0.2);
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .project-link {
+                height: 55px;
+                font-size: 9px;
+            }
+
+            .content h1 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- NAVIGATION BAR -->
     <nav class="navbar">
         <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Home</a></li>
@@ -20,7 +121,7 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
+    <!-- MAIN CONTENT -->
     <main class="content">
 
         <h1>My Portfolio</h1>
@@ -29,7 +130,7 @@
             Welcome to my portfolio! Explore my projects and activities below.
         </p>
 
-        <!-- Portfolio Grid -->
+        <!-- PORTFOLIO GRID -->
         <div class="portfolio-grid">
 
             <a href="FormElements.html" class="project-link">FORM ELEMENTS</a>
@@ -66,18 +167,17 @@
 
             <a href="CarouselGallery.html" class="project-link">CAROUSEL GALLERY</a>
 
-            <a href="christmasGreetingsCard.html" class="project-link">Christmas Greetings Card</a>
+            <a href="christmasGreetingsCard.html" class="project-link">CHRISTMAS GREETINGS CARD</a>
 
-             <a href="flexbox.html" class="project-link">Flexbox</a>
+            <a href="flexbox.html" class="project-link">FLEXBOX</a>
 
-              <a href="svgdrill.html" class="project-link">SVG drill</a>
-
+            <a href="svgdrill.html" class="project-link">SVG DRILL</a>
 
         </div>
 
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
 
         <div class="footer-container">
@@ -99,10 +199,12 @@
                 <div class="social-links">
 
                     <a href="https://www.facebook.com/profile.php?id=61576512509551"
-                       target="_blank" rel="noopener noreferrer">f</a>
+                       target="_blank"
+                       rel="noopener noreferrer">f</a>
 
                     <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=cu0s8pt"
-                       target="_blank" rel="noopener noreferrer">◎</a>
+                       target="_blank"
+                       rel="noopener noreferrer">◎</a>
 
                 </div>
             </div>
@@ -117,5 +219,4 @@
 
 </body>
 </html>
-
 
