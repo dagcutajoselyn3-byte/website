@@ -1,61 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
 
-    <title>About Me</title>
+<link rel="stylesheet" href="menu.css">
 
-    <link rel="stylesheet" href="menu.css">
+<style>
+/* ===== ABOUT PAGE DESIGN ===== */
+.about-page {
+    width: 96% !important;
+    max-width: 1250px !important;
+    margin: 20px auto !important;
+    padding: 20px !important;
+    background: #fff7fc !important;
+    color: #754565 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 25px #d77cac40 !important;
+}
+
+/* TITLE */
+.about-page-title {
+    text-align: center !important;
+    color: #d34e99 !important;
+    font-size: 30px !important;
+    margin-bottom: 8px !important;
+}
+
+.about-page-subtitle {
+    text-align: center !important;
+    color: #a45a83 !important;
+    font-size: 13px !important;
+    margin-bottom: 18px !important;
+}
+
+/* ===== TWO COLUMN LAYOUT ===== */
+.about-main {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 235px !important;
+    gap: 12px !important;
+    align-items: start !important;
+    width: 100% !important;
+}
+
+/* TEXT SIDE */
+.about-text-column {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* ACCORDION BOX */
+.about-box {
+    width: 100% !important;
+    margin-bottom: 8px !important;
+    border: 1px solid #f0b7d7 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* BUTTON */
+.about-button {
+    width: 100% !important;
+    padding: 10px 12px !important;
+    background: linear-gradient(90deg, #d63384, #f062a6, #e78bc1) !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.about-button:hover {
+    background: #ff69ad !important;
+}
+
+/* SECTION TEXT */
+.about-details {
+    display: none !important;
+    background: #fff0f8 !important;
+    padding: 12px !important;
+    color: #754565 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+}
+
+.about-details.open {
+    display: block !important;
+}
+
+.about-details h2 {
+    color: #c74389 !important;
+    font-size: 15px !important;
+    margin-bottom: 6px !important;
+}
+
+/* ===== PROFILE SIDE ===== */
+.about-profile {
+    width: 235px !important;
+    max-width: 235px !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 14px !important;
+    background: #fff0f8 !important;
+    border: 1px solid #f0b7d7 !important;
+    border-radius: 15px !important;
+    text-align: center !important;
+    box-shadow: 0 5px 15px #d77cac25 !important;
+}
+
+/* PROFILE IMAGE */
+.about-profile-image {
+    width: 105px !important;
+    height: 105px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 50% !important;
+    border: 4px solid #f3b3d5 !important;
+    display: block !important;
+    margin: 0 auto 10px !important;
+}
+
+.about-profile h2 {
+    color: #c74389 !important;
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+}
+
+.about-profile p {
+    color: #754565 !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 7px !important;
+}
+
+.about-profile strong {
+    color: #b83d83 !important;
+}
+
+/* OPEN CONTENT ANIMATION */
+@keyframes aboutAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-details.open {
+    animation: aboutAppear 0.25s ease;
+}
+
+/* ===== SMALL LAPTOP / TABLET ===== */
+@media screen and (max-width: 850px) and (min-width: 601px) {
+    .about-page {
+        padding: 15px !important;
+    }
+
+    .about-main {
+        grid-template-columns: minmax(0, 1fr) 200px !important;
+        gap: 10px !important;
+    }
+
+    .about-profile {
+        width: 200px !important;
+        max-width: 200px !important;
+        padding: 12px !important;
+    }
+
+    .about-profile-image {
+        width: 90px !important;
+        height: 90px !important;
+    }
+
+    .about-button {
+        font-size: 12px !important;
+        padding: 9px 10px !important;
+    }
+
+    .about-details {
+        font-size: 11px !important;
+        padding: 10px !important;
+    }
+}
+
+/* ===== MOBILE ===== */
+@media screen and (max-width: 600px) {
+    .about-page {
+        width: 95% !important;
+        margin: 15px auto !important;
+        padding: 14px !important;
+    }
+
+    .about-page-title {
+        font-size: 26px !important;
+    }
+
+    .about-main {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .about-profile {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .about-profile-image {
+        width: 120px !important;
+        height: 120px !important;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link active">About</a></li>
-            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-            <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+<!-- NAVIGATION MENU -->
+<nav class="navbar">
+    <a href="home.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-    <div class="content">
-        <h1>About Me</h1>
-        <p>Hello! My name is Joselyn Dagcuta.</p>
-        <p>I am a Grade 12 student from 12-Cooper.</p>
-    </div>
+<!-- ABOUT PAGE -->
+<section class="about-page">
 
-     <!-- Footer Section -->
-    <footer class="footer">
+    <h1 class="about-page-title">♡ About Me ♡</h1>
 
-        <div class="footer-container">
+    <p class="about-page-subtitle">
+        Click each section to discover more about me.
+    </p>
 
-            <div class="footer-info">
-                <h2>Stay Connected!</h2>
-                <p>
-                    Thank you for visiting my portfolio.
-                    connect and contact with me through my social media accounts.
-                    Your support and feedback are appreciated!
-                </p>
+    <div class="about-main">
+
+        <!-- LEFT: TEXT SECTIONS -->
+        <div class="about-text-column">
+
+            <!-- MY GOALS -->
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Goals <span>＋</span>
+                </button>
+
+                <div class="about-details">
+                    <h2>My Goals</h2>
+                    <p>
+                        My goal is to finish my studies, achieve my dreams,
+                        make my family proud, and have a successful future.
+                        I want to become a better person, gain more knowledge,
+                        and learn new skills that will help me in life. I also
+                        dream of having a stable job, becoming financially
+                        independent, and giving my family a comfortable life
+                        as a way of thanking them for all their love,
+                        sacrifices, and support. I want to overcome every
+                        challenge, never give up on my dreams, and prove
+                        to myself that all my hard work and sacrifices
+                        will be worth it. Most importantly, I want to
+                        build a bright future, help the people I love,
+                        and achieve all the things I have been working
+                        hard for.
+                    </p>
+                </div>
             </div>
 
-            <div class="footer-socials">
-                <h2>My Socials</h2>
+            <!-- FAVORITE SNACK -->
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Favorite Snack <span>＋</span>
+                </button>
 
-                <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61576512509551" target="_blank">f</a>
-                    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=cu0s8pt" target="_blank">▶</a>
+                <div class="about-details">
+                    <h2>My Favorite Snack</h2>
+                    <p>
+                        My favorite snack is French fries. I love eating it
+                        because it is delicious and makes me happy. I enjoy
+                        its crispy texture and salty taste, especially when
+                        it is freshly cooked. I also love eating it with
+                        ketchup or cheese dip because it makes the flavor
+                        even better. French fries are one of my favorite
+                        snacks whenever I feel hungry or want to enjoy
+                        something tasty. For me, it is a simple snack,
+                        but it always makes my day better. I can eat it
+                        anytime, whether I am relaxing, watching movies,
+                        or spending time with my friends and family.
+                    </p>
+                </div>
+            </div>
+
+            <!-- MY HOBBY -->
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Hobby <span>＋</span>
+                </button>
+
+                <div class="about-details">
+                    <h2>My Hobby</h2>
+                    <p>
+                        My hobby is spending time with my family and friends.
+                        I enjoy doing it during my free time because it makes
+                        me feel happy and relaxed. I love talking, laughing,
+                        sharing stories, and creating wonderful memories
+                        with them. I also enjoy going to different places,
+                        eating together, and doing fun activities whenever
+                        we have time. Spending time with the people I love
+                        helps me forget my stress and makes me feel
+                        appreciated and loved. For me, these simple moments
+                        are very special because they bring happiness into
+                        my life. I believe that spending quality time with
+                        family and friends is one of the best ways to make
+                        life more meaningful and memorable.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAVORITE TO WATCH -->
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Favorite to Watch <span>＋</span>
+                </button>
+
+                <div class="about-details">
+                    <h2>My Favorite to Watch</h2>
+                    <p>
+                        I love watching Superbook because it is very
+                        interesting and teaches me about the Bible.
+                        I enjoy watching its stories because they are
+                        entertaining, meaningful, and full of important
+                        lessons. It helps me learn more about God,
+                        understand Bible stories, and discover the
+                        importance of having faith, kindness, love,
+                        and respect for others. I also like how the
+                        characters experience different adventures
+                        while learning valuable lessons from the Bible.
+                        Every episode teaches me something new that
+                        I can apply to my everyday life. Watching
+                        Superbook is not only enjoyable but also helps
+                        me grow in my knowledge and understanding
+                        of God's words. It is one of my favorite shows
+                        to watch during my free time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAVORITE GAMES -->
+            <div class="about-box">
+                <button class="about-button" onclick="toggleSection(this)">
+                    My Favorite Games <span>＋</span>
+                </button>
+
+                <div class="about-details">
+                    <h2>My Favorite Games</h2>
+                    <p>
+                        My favorite game is Minecraft. I enjoy playing
+                        it for fun whenever I have free time. I love
+                        this game because it allows me to explore
+                        different places, build houses, create beautiful
+                        structures, and discover new things. It also
+                        challenges my creativity and imagination because
+                        I can design and build anything I want. I enjoy
+                        exploring the world, collecting materials,
+                        and completing different adventures in the game.
+                        Sometimes, I also play with my friends because
+                        it makes the game more exciting and enjoyable.
+                        Playing Minecraft helps me relax, especially
+                        when I feel tired from school activities.
+                        For me, it is not just a game but also a fun
+                        way to spend my free time and express my creativity.
+                    </p>
                 </div>
             </div>
 
         </div>
 
-        <div class="footer-bottom">
-            <p>©2026 EFN Corporation.</p>
-        </div>
+        <!-- RIGHT: PROFILE -->
+        <aside class="about-profile">
 
-    </footer>
+            <img src="Future me.jpg"
+                 alt="My Profile Picture"
+                 class="about-profile-image">
+
+            <h2>Hello! Welcome.</h2>
+
+            <p>
+                Hello! My name is Joselyn F. Dagcuta.
+                I am a Grade 12 student from 12-Copper.
+                Welcome to my personal website!
+            </p>
+
+            <p>
+                <strong>Section:</strong> 12 - Copper
+            </p>
+
+            <p>
+                <strong>Strand:</strong> ICT
+            </p>
+
+        </aside>
+
+    </div>
+
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+function toggleSection(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector("span");
+
+    // Close other sections
+    document.querySelectorAll(".about-details").forEach(item => {
+        if (item !== content) {
+            item.classList.remove("open");
+        }
+    });
+
+    // Reset other icons
+    document.querySelectorAll(".about-button span").forEach(item => {
+        if (item !== icon) {
+            item.innerHTML = "＋";
+        }
+    });
+
+    // Toggle selected section
+    content.classList.toggle("open");
+
+    if (content.classList.contains("open")) {
+        icon.innerHTML = "−";
+    } else {
+        icon.innerHTML = "＋";
+    }
+}
+</script>
 
 </body>
 </html>
+
