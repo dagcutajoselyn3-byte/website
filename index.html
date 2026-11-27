@@ -3,532 +3,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joselyn F. Dagcuta | Personal Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Personal Website</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="menu.css">
 
-    <style>
-        /* PINK COLOR THEME */
-        :root {
-            --primary-pink: #d94f93;
-            --primary-pink-dark: #c63d7d;
-            --active-tab-bg: #b93676;
-            --blush-bg: #ffe5f0;
-            --page-bg: #fff4f9;
-            --text-dark: #743b59;
-            --text-white: #ffffff;
-            --card-bg: #fffafd;
-            --card-shadow: 0 8px 22px rgba(201, 76, 135, 0.13);
-        }
+<style>
 
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* ===== BACKGROUND ===== */
+.home-page {
+    background: linear-gradient(135deg, #fff4f9, #ffe8f3, #ffd9eb);
+    color: #754565;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #fff4f9, #ffe8f3, #ffd9eb);
-            color: var(--text-dark);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+/* ===== NAVIGATION ===== */
+.navbar {
+    background: linear-gradient(90deg, #d94f93, #e875ad) !important;
+}
 
-        /* NAVIGATION */
-        header.navbar {
-            background: linear-gradient(90deg, #d94f93, #e875ad);
-            width: 100%;
-            box-shadow: 0 3px 12px rgba(190, 60, 120, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+.navbar a {
+    color: white !important;
+}
 
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+.navbar a:hover {
+    background-color: #e78ab6 !important;
+}
 
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.90rem;
-            padding: 14px 22px;
-            transition: 0.25s ease;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            font-family: inherit;
-        }
+.navbar a.active {
+    background-color: #c14480 !important;
+}
 
-        .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.18);
-        }
+/* ===== HEADER ===== */
+.home-header {
+    background: linear-gradient(135deg, #ffe4f0, #ffd4e8);
+    text-align: center;
+    padding: 35px 15px;
+    border-bottom: 1px solid #f3bfd8;
+}
 
-        .nav-link.active {
-            background-color: #bd397a;
-            box-shadow: inset 0 -3px 0 #ffd5e8;
-        }
+.home-header h1 {
+    font-size: 30px;
+    margin: 0 0 8px;
+    color: #a63873;
+}
 
-        /* HERO SECTION */
-        .hero-section {
-            background: linear-gradient(135deg, #ffe5f0, #ffd1e5);
-            text-align: center;
-            padding: 48px 20px;
-            border-bottom: 1px solid #f5c5dc;
-        }
+.home-header .grade {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 18px;
+    color: #c04e86;
+}
 
-        .hero-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: #873d61;
-            letter-spacing: -0.02em;
-            margin-bottom: 6px;
-        }
+.home-header .tagline {
+    max-width: 700px;
+    margin: auto;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.65);
+    border-radius: 30px;
+    color: #854460;
+    font-size: 15px;
+    line-height: 1.7;
+}
 
-        .hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #c04e86;
-            margin-bottom: 14px;
-        }
+/* ===== CONTENT BOXES ===== */
+.home-content,
+.skills-content,
+.website-summary {
+    width: 90%;
+    max-width: 850px;
+    margin: 28px auto;
+    padding: 28px 32px;
+    background: linear-gradient(135deg, #d95796, #e783ad);
+    color: #fffafd;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.15);
+    text-align: center;
+}
 
-        .hero-tagline {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #854460;
-            max-width: 650px;
-            margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 9px 18px;
-            border-radius: 999px;
-            display: inline-block;
-        }
+/* ===== BOX HEADINGS ===== */
+.home-content h2,
+.skills-content h2,
+.website-summary h2 {
+    font-size: 23px;
+    margin: 0 0 16px;
+    color: white;
+}
 
-        /* MAIN CONTENT */
-        main.content-wrapper {
-            flex: 1;
-            max-width: 820px;
-            width: 100%;
-            margin: 36px auto;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-        }
+/* ===== PARAGRAPHS ===== */
+.home-content p,
+.skills-content p,
+.website-summary p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 10px 0;
+    color: #fffafd;
+}
 
-        /* TAB PANELS */
-        .tab-panel {
-            display: none;
-            flex-direction: column;
-            gap: 28px;
-            animation: fadeIn 0.35s ease;
-        }
+/* ===== EXPLORE MY PAGES ===== */
+.home-content h3 {
+    font-size: 16px;
+    text-align: left;
+    color: #fff0f7;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
-        .tab-panel.active {
-            display: flex;
-        }
+.home-content hr {
+    border: none;
+    border-top: 1px solid #ffc6df;
+    margin: 15px 0;
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* ===== SKILL BADGES ===== */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+}
 
-        /* PINK CARDS */
-        .pink-card {
-            background: linear-gradient(145deg, #fffafd, #ffeaf4);
-            color: var(--text-dark);
-            border: 1px solid #f6c8dd;
-            border-radius: 18px;
-            padding: 32px 36px;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
+.skill-badge {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    padding: 9px 17px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+}
 
-        .pink-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(201, 76, 135, 0.18);
-        }
+/* ===== WEBSITE SUMMARY ===== */
+.website-summary p {
+    text-align: center;
+}
 
-        .card-heading {
-            font-size: 1.45rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 16px;
-            color: #c14480;
-            letter-spacing: -0.01em;
-        }
+/* ===== FOOTER ===== */
+.home-footer {
+    background: linear-gradient(135deg, #ffe7f2, #ffedf6);
+    margin-top: 50px;
+    padding: 30px 15px;
+    text-align: center;
+    border-top: 1px solid #f4c5dc;
+}
 
-        .card-text {
-            font-size: 0.98rem;
-            text-align: center;
-            color: #75455e;
-            line-height: 1.8;
-        }
+.home-footer p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 8px 0;
+    color: #854460;
+}
 
-        /* DIVIDER */
-        .card-divider {
-            border: 0;
-            height: 1px;
-            background: #efb7d2;
-            margin: 24px 0 20px 0;
-        }
+.home-footer .footer-quote {
+    font-style: italic;
+}
 
-        .subsection-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            text-align: left;
-            color: #c14480;
-        }
+.home-footer .footer-copyright {
+    font-weight: bold;
+    color: #b3447c;
+}
 
-        /* QUICK GUIDE */
-        .quick-guide-list {
-            list-style: none;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+/* ===== MOBILE ===== */
+@media screen and (max-width: 600px) {
 
-        .quick-guide-list li {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            padding-left: 22px;
-            position: relative;
-            color: #75455e;
-        }
+    .home-header h1 {
+        font-size: 24px;
+    }
 
-        .quick-guide-list li::before {
-            content: "♥";
-            position: absolute;
-            left: 3px;
-            font-size: 12px;
-            color: #d94f93;
-        }
+    .home-header .grade {
+        font-size: 15px;
+    }
 
-        .quick-guide-list strong {
-            color: #c14480;
-            font-weight: 700;
-        }
+    .home-header .tagline {
+        font-size: 13px;
+        border-radius: 15px;
+    }
 
-        /* SKILLS */
-        .skills-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 18px;
-        }
+    .home-content,
+    .skills-content,
+    .website-summary {
+        width: 92%;
+        padding: 22px 18px;
+    }
 
-        .skill-badge {
-            background-color: #f9d7e8;
-            border: 1px solid #eeb5d1;
-            color: #a53c72;
-            padding: 7px 14px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
+    .home-content h2,
+    .skills-content h2,
+    .website-summary h2 {
+        font-size: 20px;
+    }
 
-        /* PREVIEW PANELS */
-        .preview-note {
-            background: linear-gradient(135deg, #fffafd, #ffe5f0);
-            color: var(--text-dark);
-            border: 2px dashed #df82b0;
-            border-radius: 18px;
-            padding: 36px;
-            text-align: center;
-            box-shadow: var(--card-shadow);
-        }
+    .home-content p,
+    .skills-content p,
+    .website-summary p {
+        font-size: 12px;
+    }
 
-        .preview-note h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            color: #c14480;
-        }
+    .skill-badge {
+        font-size: 11px;
+        padding: 7px 12px;
+    }
 
-        .preview-note p {
-            color: #75455e;
-        }
+    .home-footer {
+        margin-top: 35px;
+        padding: 22px 15px;
+    }
+}
 
-        /* BACK BUTTON */
-        .back-home-btn {
-            margin-top: 18px;
-            background: linear-gradient(90deg, #d94f93, #e875ad);
-            color: white;
-            border: none;
-            padding: 10px 22px;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: inherit;
-            transition: 0.2s;
-        }
-
-        .back-home-btn:hover {
-            background: #c63d7d;
-            transform: translateY(-2px);
-        }
-
-        /* FOOTER */
-        footer.site-footer {
-            background: linear-gradient(135deg, #ffe5f0, #ffd1e5);
-            text-align: center;
-            padding: 28px 20px;
-            margin-top: auto;
-            border-top: 1px solid #f5c5dc;
-            color: var(--text-dark);
-        }
-
-        .footer-quote {
-            font-style: italic;
-            font-weight: 500;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-            color: #854460;
-        }
-
-        .footer-copyright {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #c04e86;
-        }
-
-        /* MOBILE RESPONSIVE */
-        @media (max-width: 640px) {
-            .nav-container {
-                justify-content: center;
-            }
-
-            .nav-link {
-                padding: 12px 14px;
-                font-size: 0.85rem;
-            }
-
-            .hero-title {
-                font-size: 1.75rem;
-            }
-
-            .hero-tagline {
-                font-size: 0.85rem;
-                border-radius: 14px;
-            }
-
-            .pink-card {
-                padding: 24px 20px;
-            }
-
-            .card-heading {
-                font-size: 1.25rem;
-            }
-
-            .preview-note {
-                padding: 25px 18px;
-            }
-        }
-    </style>
+</style>
 </head>
 
-<body>
+<body class="home-page">
 
-    <!-- NAVIGATION BAR -->
-    <header class="navbar">
-        <nav class="nav-container" aria-label="Primary Navigation">
-            <button class="nav-link active" data-target="home">Home</button>
-            <button class="nav-link" data-target="about">About</button>
-            <button class="nav-link" data-target="gallery">Gallery</button>
-            <button class="nav-link" data-target="portfolio">Portfolio</button>
-            <button class="nav-link" data-target="contact">Contact</button>
-        </nav>
-    </header>
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <h1 class="hero-title">Joselyn F. Dagcuta</h1>
-        <p class="hero-subtitle">Grade 12 - Copper</p>
-        <p class="hero-tagline">
-            Future IT Professional | Passionate about Technology, Creativity, and Continuous Learning.
-        </p>
-    </section>
+<!-- HEADER -->
+<header class="home-header">
 
-    <!-- MAIN CONTENT -->
-    <main class="content-wrapper">
+    <h1>Joselyn F. Dagcuta</h1>
 
-        <!-- HOME TAB -->
-        <div id="home" class="tab-panel active">
+    <p class="grade">Grade 12 - Copper</p>
 
-            <!-- ABOUT MY WEBSITE -->
-            <article class="pink-card">
-                <h2 class="card-heading">About My Website</h2>
+    <p class="tagline">
+        Future IT Professional | Passionate about Technology,
+        Creativity, and Continuous Learning.
+    </p>
 
-                <p class="card-text">
-                    Hi! I'm Joselyn, a Grade 12 ICT student who enjoys learning about computers,
-                    creating projects, and discovering new things. This website is a digital space
-                    where I can express myself and share some of my school activities and personal interests.
-                </p>
+</header>
 
-                <hr class="card-divider">
+<!-- ABOUT MY WEBSITE -->
+<main class="home-content">
 
-                <h3 class="subsection-title">Explore My Pages</h3>
+    <h2>About My Website</h2>
 
-                <ul class="quick-guide-list">
-                    <li><strong>About:</strong> Get to know my background, hobbies, and personal goals.</li>
-                    <li><strong>Gallery:</strong> A collection of my favorite memories and school moments.</li>
-                    <li><strong>Portfolio:</strong> A showcase of my ICT projects, outputs, and activities.</li>
-                    <li><strong>Contact:</strong> Ways to reach out and connect with me on social media.</li>
-                </ul>
-            </article>
+    <p>
+        Hi! I'm Joselyn, a Grade 12 ICT student who enjoys learning
+        about computers, creating projects, and discovering new things.
+        This website is a digital space where I can express myself and
+        share some of my school activities and personal interests.
+    </p>
 
-            <!-- SKILLS AND INTERESTS -->
-            <article class="pink-card">
-                <h2 class="card-heading">My Skills &amp; Interests</h2>
+    <hr>
 
-                <p class="card-text">
-                    As an ICT student, I am currently building my foundation in basic web design
-                    (HTML &amp; CSS), computer troubleshooting, and digital creativity. Outside of
-                    coding and schoolwork, I enjoy exploring new tech trends, photo/video editing,
-                    and learning skills that will prepare me for college and my future career in technology.
-                </p>
+    <h3>Explore My Pages</h3>
 
-                <div class="skills-tags">
-                    <span class="skill-badge">HTML &amp; CSS</span>
-                    <span class="skill-badge">Web Design</span>
-                    <span class="skill-badge">Troubleshooting</span>
-                    <span class="skill-badge">Digital Creativity</span>
-                    <span class="skill-badge">Continuous Learning</span>
-                </div>
-            </article>
+    <p>
+        About: Get to know my background, hobbies, and personal goals.
+    </p>
 
-            <!-- WEBSITE SUMMARY -->
-            <article class="pink-card">
-                <h2 class="card-heading">My Website-Summary</h2>
+    <p>
+        Gallery: A collection of my favorite memories and school moments.
+    </p>
 
-                <p class="card-text">
-                    This personal website serves as an introduction to who I am as a student
-                    and as an individual. It includes different pages that share my background,
-                    interests, photos, school projects, and contact information. I hope you enjoy looking around!
-                </p>
-            </article>
+    <p>
+        Portfolio: A showcase of my ICT projects, outputs, and activities.
+    </p>
 
-        </div>
+    <p>
+        Contact: Ways to reach out and connect with me on social media.
+    </p>
 
-        <!-- ABOUT TAB -->
-        <div id="about" class="tab-panel">
-            <div class="preview-note">
-                <h3>About Page Preview</h3>
-                <p>
-                    Dito ilalagay ang iyong mas detalyadong talambuhay,
-                    hobbies, at mga pangarap bilang isang ICT student.
-                </p>
-                <button class="back-home-btn" onclick="switchTab('home')">
-                    Back to Home
-                </button>
-            </div>
-        </div>
+</main>
 
-        <!-- GALLERY TAB -->
-        <div id="gallery" class="tab-panel">
-            <div class="preview-note">
-                <h3>Gallery Page Preview</h3>
-                <p>
-                    Dito mo ipapakita ang mga litrato mo kasama ang iyong mga kaklase
-                    sa Grade 12 - Copper at mga school events.
-                </p>
-                <button class="back-home-btn" onclick="switchTab('home')">
-                    Back to Home
-                </button>
-            </div>
-        </div>
+<!-- MY SKILLS AND INTERESTS -->
+<section class="skills-content">
 
-        <!-- PORTFOLIO TAB -->
-        <div id="portfolio" class="tab-panel">
-            <div class="preview-note">
-                <h3>Portfolio Page Preview</h3>
-                <p>
-                    Dito mo ilalagay ang mga natapos mong ICT activities,
-                    websites, at iba pang school projects.
-                </p>
-                <button class="back-home-btn" onclick="switchTab('home')">
-                    Back to Home
-                </button>
-            </div>
-        </div>
+    <h2>My Skills &amp; Interests</h2>
 
-        <!-- CONTACT TAB -->
-        <div id="contact" class="tab-panel">
-            <div class="preview-note">
-                <h3>Contact Page Preview</h3>
-                <p>
-                    Dito makikita ang iyong email address at social media links
-                    para makontak ka ng mga bisita.
-                </p>
-                <button class="back-home-btn" onclick="switchTab('home')">
-                    Back to Home
-                </button>
-            </div>
-        </div>
+    <p>
+        As an ICT student, I am currently building my foundation in
+        basic web design (HTML &amp; CSS), computer troubleshooting,
+        and digital creativity. Outside of coding and schoolwork,
+        I enjoy exploring new tech trends, photo/video editing,
+        and learning skills that will prepare me for college and
+        my future career in technology.
+    </p>
 
-    </main>
+    <div class="skills-tags">
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <p class="footer-quote">
-            "Learning never exhausts the mind." – Leonardo da Vinci
-        </p>
-        <p class="footer-copyright">
-            &copy; 2026 Joselyn F. Dagcuta
-        </p>
-    </footer>
+        <span class="skill-badge">HTML &amp; CSS</span>
 
-    <!-- JAVASCRIPT NAVIGATION -->
-    <script>
-        const navButtons = document.querySelectorAll('.nav-link');
-        const tabPanels = document.querySelectorAll('.tab-panel');
+        <span class="skill-badge">Web Design</span>
 
-        function switchTab(targetId) {
-            navButtons.forEach(button => {
-                if (button.getAttribute('data-target') === targetId) {
-                    button.classList.add('active');
-                } else {
-                    button.classList.remove('active');
-                }
-            });
+        <span class="skill-badge">Troubleshooting</span>
 
-            tabPanels.forEach(panel => {
-                if (panel.id === targetId) {
-                    panel.classList.add('active');
-                } else {
-                    panel.classList.remove('active');
-                }
-            });
-        }
+        <span class="skill-badge">Digital Creativity</span>
 
-        navButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const target = button.getAttribute('data-target');
-                switchTab(target);
-            });
-        });
-    </script>
+        <span class="skill-badge">Continuous Learning</span>
+
+    </div>
+
+</section>
+
+<!-- MY WEBSITE SUMMARY -->
+<section class="website-summary">
+
+    <h2>My Website-Summary</h2>
+
+    <p>
+        This personal website serves as an introduction to who I am
+        as a student and as an individual. It includes different pages
+        that share my background, interests, photos, school projects,
+        and contact information. I hope you enjoy looking around!
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="home-footer">
+
+    <p class="footer-quote">
+        "Learning never exhausts the mind." – Leonardo da Vinci
+    </p>
+
+    <p class="footer-copyright">
+        &copy; 2026 Joselyn F. Dagcuta
+    </p>
+
+</footer>
 
 </body>
 </html>
