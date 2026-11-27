@@ -39,20 +39,29 @@ body {
     margin-bottom: 30px;
 }
 
-/* ===== CONTACT CONTAINER ===== */
+/* ===== TWO COLUMN LAYOUT ===== */
 .contact-container {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    gap: 18px;
+    align-items: flex-start;
+    gap: 22px;
     flex-wrap: wrap;
 }
 
-/* ===== CARDS ===== */
+/* ===== COLUMN ===== */
+.contact-column {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ===== CARD DESIGN ===== */
 .contact-card {
-    width: 220px;
+    width: 100%;
+    box-sizing: border-box;
     padding: 20px;
-    background: white;
+    background: #ffffff;
     border: 1px solid #ffc5df;
     border-radius: 18px;
     box-shadow: 0 5px 15px rgba(214, 51, 132, 0.10);
@@ -60,34 +69,34 @@ body {
 }
 
 .contact-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(214, 51, 132, 0.18);
 }
 
-/* ===== CARD TITLES ===== */
+/* ===== TEXT ===== */
 .contact-card h2 {
     color: #d63384;
     font-size: 21px;
-    margin-bottom: 10px;
+    margin: 5px 0 10px;
 }
 
 .contact-card h3 {
     color: #c93682;
     font-size: 16px;
-    margin: 12px 0 5px;
+    margin: 10px 0 5px;
 }
 
 .contact-card p {
     color: #c04a89;
     font-size: 13px;
     line-height: 1.6;
-    margin: 8px 0;
+    margin: 7px 0;
 }
 
 /* ===== INSTAGRAM AND FACEBOOK PICTURES ===== */
 .contact-card img {
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 50%;
     display: block;
@@ -114,24 +123,42 @@ body {
     opacity: 0.85;
 }
 
-/* INSTAGRAM */
+/* INSTAGRAM BUTTON */
 .instagram-btn {
     background: linear-gradient(45deg, #ff80b5, #e84393, #d63384);
 }
 
-/* FACEBOOK */
+/* FACEBOOK BUTTON */
 .facebook-btn {
     background: #d63384;
 }
 
-/* PHONE */
+/* PHONE BUTTON */
 .phone-btn {
     background: #e754a6;
 }
 
-/* ADDRESS */
+/* ADDRESS BUTTON */
 .address-btn {
     background: #c93682;
+}
+
+/* ===== PHONE CARD ===== */
+.phone-card h2 {
+    font-size: 19px;
+}
+
+.phone-card h3 {
+    font-size: 17px;
+}
+
+/* ===== ADDRESS CARD ===== */
+.address-card h2 {
+    font-size: 19px;
+}
+
+.address-card p {
+    line-height: 1.8;
 }
 
 /* ===== FOOTER ===== */
@@ -219,8 +246,8 @@ body {
     font-size: 12px;
 }
 
-/* ===== SMALL SCREEN ===== */
-@media screen and (max-width: 500px) {
+/* ===== MOBILE ===== */
+@media screen and (max-width: 600px) {
 
     .contact-section {
         padding: 25px 10px;
@@ -238,9 +265,12 @@ body {
         gap: 12px;
     }
 
+    .contact-column {
+        width: 260px;
+    }
+
     .contact-card {
-        width: 200px;
-        padding: 15px;
+        padding: 17px;
     }
 
     .footer-container {
@@ -275,85 +305,95 @@ body {
 
     <div class="contact-container">
 
-        <!-- INSTAGRAM WITH PICTURE -->
-        <div class="contact-card">
+        <!-- LEFT COLUMN: INSTAGRAM + PHONE -->
+        <div class="contact-column">
 
-            <h2>Instagram</h2>
+            <!-- INSTAGRAM -->
+            <div class="contact-card">
 
-            <p>Follow me on Instagram</p>
+                <h2>Instagram</h2>
 
-            <img src="instagram.jpg"
-                 alt="Instagram profile">
+                <p>Follow me on Instagram</p>
 
-            <h3>Joselyn Dagcuta</h3>
+                <img src="instagram.jpg"
+                     alt="Instagram profile">
 
-            <p>@dagcutajoselyn</p>
+                <h3>Joselyn Dagcuta</h3>
 
-            <a href="https://www.instagram.com/dagcutajoselyn/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="contact-btn instagram-btn">
-                Visit Instagram
-            </a>
+                <p>@dagcutajoselyn</p>
 
-        </div>
+                <a href="https://www.instagram.com/dagcutajoselyn/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-btn instagram-btn">
+                    Visit Instagram
+                </a>
 
-        <!-- FACEBOOK WITH PICTURE -->
-        <div class="contact-card">
+            </div>
 
-            <h2>Facebook</h2>
+            <!-- PHONE NUMBER - NO PICTURE -->
+            <div class="contact-card phone-card">
 
-            <p>Connect with me on Facebook</p>
+                <h2>Phone Number</h2>
 
-            <img src="facebook.jpg"
-                 alt="Facebook profile">
+                <p>You can reach me through my phone number.</p>
 
-            <h3>Joselyn Dagcuta</h3>
+                <h3>09309726839</h3>
 
-            <p>Personal Facebook Account</p>
+                <a href="tel:09309726839"
+                   class="contact-btn phone-btn">
+                    Call Me
+                </a>
 
-            <a href="https://www.facebook.com/profile.php?id=61576512509551"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="contact-btn facebook-btn">
-                Visit Facebook
-            </a>
+            </div>
 
         </div>
 
-        <!-- PHONE NUMBER WITHOUT PICTURE -->
-        <div class="contact-card">
+        <!-- RIGHT COLUMN: FACEBOOK + ADDRESS -->
+        <div class="contact-column">
 
-            <h2>Phone Number</h2>
+            <!-- FACEBOOK -->
+            <div class="contact-card">
 
-            <p>You can reach me through my phone number.</p>
+                <h2>Facebook</h2>
 
-            <h3>09309726839</h3>
+                <p>Connect with me on Facebook</p>
 
-            <a href="tel:09309726839"
-               class="contact-btn phone-btn">
-                Call Me
-            </a>
+                <img src="facebook.jpg"
+                     alt="Facebook profile">
 
-        </div>
+                <h3>Joselyn Dagcuta</h3>
 
-        <!-- ADDRESS WITHOUT PICTURE -->
-        <div class="contact-card">
+                <p>Personal Facebook Account</p>
 
-            <h2>My Address</h2>
+                <a href="https://www.facebook.com/profile.php?id=61576512509551"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-btn facebook-btn">
+                    Visit Facebook
+                </a>
 
-            <p>My home address</p>
+            </div>
 
-            <h3>B13 L9 PTC South Sub</h3>
+            <!-- ADDRESS - NO PICTURE -->
+            <div class="contact-card address-card">
 
-            <p>Carsadang Bago 2</p>
+                <h2>My Address</h2>
 
-            <a href="https://www.google.com/maps/search/?api=1&query=PTC+South+Sub+Carsadang+Bago+2"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="contact-btn address-btn">
-                View Location
-            </a>
+                <p>My home address</p>
+
+                <h3>B13 L9 PTC South Sub</h3>
+
+                <p>Carsadang Bago 2</p>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=PTC+South+Sub+Carsadang+Bago+2"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-btn address-btn">
+                    View Location
+                </a>
+
+            </div>
 
         </div>
 
@@ -366,6 +406,7 @@ body {
 
     <div class="footer-container">
 
+        <!-- STAY CONNECTED -->
         <div class="footer-info">
 
             <h2>Stay Connected!</h2>
@@ -378,6 +419,7 @@ body {
 
         </div>
 
+        <!-- MY SOCIALS -->
         <div class="footer-socials">
 
             <h2>My Socials</h2>
@@ -409,3 +451,4 @@ body {
 
 </body>
 </html>
+
