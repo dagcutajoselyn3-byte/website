@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tree Drawing</title>
+
+    <style>
+        #myDrawing {
+            border: solid 1px rgb(34, 235, 34);
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<canvas height="500" width="1000" id="myDrawing"></canvas>
+
+<script>
+    const canvas = document.getElementById("myDrawing");
+    const ctx = canvas.getContext("2d");
+
+    // Tree
+    ctx.beginPath();
+    ctx.moveTo(500, 100);
+    ctx.lineTo(430, 210);
+    ctx.lineTo(570, 210);
+    ctx.closePath();
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(500, 170);
+    ctx.lineTo(400, 290);
+    ctx.lineTo(600, 290);
+    ctx.closePath();
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(500, 250);
+    ctx.lineTo(370, 370);
+    ctx.lineTo(630, 370);
+    ctx.closePath();
+    ctx.fillStyle = "green";
+    ctx.fill();
+    ctx.stroke();
+
+    // Trunk
+    ctx.fillStyle = "brown";
+    ctx.fillRect(480, 370, 40, 60);
+
+    // Star
+    ctx.beginPath();
+    ctx.arc(500, 85, 12, 0, Math.PI * 2);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.stroke();
+
+    // Balls
+    ctx.beginPath();
+    ctx.arc(480, 200, 7, 0, Math.PI * 2);
+    ctx.arc(520, 200, 7, 0, Math.PI * 2);
+    ctx.arc(450, 270, 7, 0, Math.PI * 2);
+    ctx.arc(550, 270, 7, 0, Math.PI * 2);
+    ctx.arc(420, 340, 7, 0, Math.PI * 2);
+    ctx.arc(580, 340, 7, 0, Math.PI * 2);
+    ctx.fillStyle = "red";
+    ctx.fill();
+
+</script>
+
+</body>
+</html>
