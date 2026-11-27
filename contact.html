@@ -3,381 +3,409 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact</title>
+<title>Contact Me</title>
 
-    <link rel="stylesheet" href="menu.css">
+<link rel="stylesheet" href="menu.css">
 
-    <style>
+<style>
 
-        /* ===== PINK CONTACT BACKGROUND ===== */
+/* ===== BACKGROUND ===== */
+body {
+    background: linear-gradient(135deg, #fff0f6, #ffe1ef, #ffd6e8) !important;
+    color: #b52d78;
+    min-height: 100vh;
+    margin: 0;
+}
 
-        body {
-            background: linear-gradient(135deg, #fff0f6, #ffe1ef, #ffd6e8) !important;
-            color: #b52d78 !important;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+    text-align: center;
+    padding: 35px 15px;
+}
 
-        /* CONTACT SECTION */
-        .contact-section {
-            flex: 1;
-            text-align: center;
-            padding: 35px 15px;
-        }
+/* ===== TITLE ===== */
+.contact-section h1 {
+    color: #d63384;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
 
-        /* TITLE */
-        .contact-section h1 {
-            color: #d63384;
-            font-size: 38px;
-            margin-bottom: 12px;
-            text-shadow: 0 0 12px rgba(255, 77, 166, 0.2);
-        }
+.contact-subtitle {
+    color: #c04a89;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
 
-        /* SUBTITLE */
-        .contact-subtitle {
-            color: #c04a89;
-            margin-bottom: 30px;
-            font-size: 15px;
-        }
+/* ===== CONTACT CONTAINER ===== */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 18px;
+    flex-wrap: wrap;
+}
 
-        /* CARDS SIDE BY SIDE */
-        .contact-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
+/* ===== CARDS ===== */
+.contact-card {
+    width: 220px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ffc5df;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.10);
+    transition: 0.3s;
+}
 
-        /* INSTAGRAM AND FACEBOOK CARDS */
-        .instagram-card,
-        .facebook-card {
-            width: 220px;
-            padding: 18px 15px;
-            background: linear-gradient(145deg, #ffffff, #fff0f6);
-            color: #c04a89;
-            border-radius: 16px;
-            box-shadow: 0 5px 18px rgba(214, 51, 132, 0.12);
-            border: 1px solid #ffc5df;
-            transition: 0.3s ease;
-        }
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.18);
+}
 
-        /* CARD HOVER */
-        .instagram-card:hover,
-        .facebook-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 22px rgba(214, 51, 132, 0.2);
-        }
+/* ===== CARD TITLES ===== */
+.contact-card h2 {
+    color: #d63384;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
 
-        .instagram-card h2,
-        .facebook-card h2 {
-            font-size: 21px;
-            color: #d63384;
-            margin-bottom: 7px;
-        }
+.contact-card h3 {
+    color: #c93682;
+    font-size: 16px;
+    margin: 12px 0 5px;
+}
 
-        .instagram-card p,
-        .facebook-card p {
-            font-size: 13px;
-            margin: 7px 0;
-            color: #c04a89;
-        }
+.contact-card p {
+    color: #c04a89;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 8px 0;
+}
 
-        .instagram-card h3,
-        .facebook-card h3 {
-            font-size: 16px;
-            color: #c93682;
-            margin-top: 8px;
-        }
+/* ===== INSTAGRAM AND FACEBOOK PICTURES ===== */
+.contact-card img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 12px auto;
+    border: 3px solid #ffc5df;
+    box-shadow: 0 3px 8px rgba(214, 51, 132, 0.12);
+}
 
-        /* PROFILE PICTURES */
-        .contact-section img.profile-picture {
-            width: 75px;
-            height: 75px;
-            max-width: 75px;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
-            margin: 12px auto;
-            border: 3px solid #ffc5df;
-            box-shadow: 0 3px 8px rgba(214, 51, 132, 0.15);
-        }
+/* ===== BUTTONS ===== */
+.contact-btn {
+    display: inline-block;
+    padding: 9px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
 
-        /* BUTTONS */
-        .instagram-btn,
-        .facebook-btn {
-            display: inline-block;
-            padding: 8px 12px;
-            text-decoration: none;
-            color: white;
-            border-radius: 20px;
-            margin-top: 8px;
-            font-size: 12px;
-            font-weight: bold;
-            transition: 0.3s ease;
-        }
+.contact-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
 
-        /* PINK BUTTONS */
-        .instagram-btn {
-            background: linear-gradient(45deg, #ff80b5, #e84393, #d63384);
-        }
+/* INSTAGRAM */
+.instagram-btn {
+    background: linear-gradient(45deg, #ff80b5, #e84393, #d63384);
+}
 
-        .facebook-btn {
-            background: #d63384;
-        }
+/* FACEBOOK */
+.facebook-btn {
+    background: #d63384;
+}
 
-        .instagram-btn:hover,
-        .facebook-btn:hover {
-            transform: translateY(-3px);
-            opacity: 0.85;
-        }
+/* PHONE */
+.phone-btn {
+    background: #e754a6;
+}
 
-        /* ===== FOOTER - NO COLOR BLOCK ===== */
+/* ADDRESS */
+.address-btn {
+    background: #c93682;
+}
 
-        .footer {
-            margin-top: 30px;
-            background: transparent !important;
-        }
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: 25px;
+    background: transparent !important;
+}
 
-        /* TRANSPARENT FOOTER */
-        .footer-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            padding: 25px 30px;
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 25px;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
 
-            /* REMOVE BACKGROUND BLOCK */
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-        }
+.footer-info,
+.footer-socials {
+    max-width: 320px;
+    text-align: center;
+    background: transparent !important;
+}
 
-        .footer-info,
-        .footer-socials {
-            max-width: 350px;
-            text-align: center;
-            background: transparent !important;
-        }
+.footer-info h2,
+.footer-socials h2 {
+    color: #d63384;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
 
-        /* FOOTER HEADINGS */
-        .footer-info h2,
-        .footer-socials h2 {
-            color: #d63384;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
+.footer-info p {
+    color: #b52d78;
+    font-size: 13px;
+    line-height: 1.7;
+}
 
-        /* FOOTER TEXT */
-        .footer-info p {
-            color: #b52d78;
-            font-size: 13px;
-            line-height: 1.7;
-        }
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
 
-        /* SOCIAL ICONS */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 10px;
-            background: transparent !important;
-        }
+.social-links a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        .social-links a {
-            width: 38px;
-            height: 38px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.social-links a:first-child {
+    background: #d63384;
+}
 
-        /* PINK FACEBOOK */
-        .social-links a:first-child {
-            background: #d63384;
-        }
+.social-links a:last-child {
+    background: linear-gradient(45deg, #ff80b5, #e84393, #d63384);
+}
 
-        /* PINK INSTAGRAM */
-        .social-links a:last-child {
-            background: linear-gradient(45deg, #ff80b5, #e84393, #d63384);
-        }
+.social-links a:hover {
+    transform: scale(1.12);
+}
 
-        .social-links a:hover {
-            transform: scale(1.15);
-            box-shadow: 0 4px 10px rgba(214, 51, 132, 0.25);
-        }
+/* ===== COPYRIGHT ===== */
+.footer-bottom {
+    text-align: center;
+    padding: 12px;
+    background: transparent !important;
+    border: none !important;
+}
 
-        /* COPYRIGHT - NO COLOR BLOCK */
-        .footer-bottom {
-            background: transparent !important;
-            text-align: center;
-            padding: 12px;
-            border: none !important;
-        }
+.footer-bottom p {
+    color: #b52d78;
+    font-size: 12px;
+}
 
-        .footer-bottom p {
-            color: #b52d78;
-            font-size: 12px;
-        }
+/* ===== SMALL SCREEN ===== */
+@media screen and (max-width: 500px) {
 
-        /* SMALL SCREEN */
-        @media screen and (max-width: 500px) {
+    .contact-section {
+        padding: 25px 10px;
+    }
 
-            .contact-section {
-                padding: 25px 10px;
-            }
+    .contact-section h1 {
+        font-size: 29px;
+    }
 
-            .contact-section h1 {
-                font-size: 30px;
-            }
+    .contact-subtitle {
+        font-size: 13px;
+    }
 
-            .contact-subtitle {
-                font-size: 13px;
-            }
+    .contact-container {
+        gap: 12px;
+    }
 
-            .contact-container {
-                gap: 10px;
-            }
+    .contact-card {
+        width: 200px;
+        padding: 15px;
+    }
 
-            .instagram-card,
-            .facebook-card {
-                width: 160px;
-                padding: 13px 8px;
-            }
+    .footer-container {
+        padding: 20px 15px;
+        gap: 20px;
+    }
 
-            .footer-container {
-                padding: 20px 15px;
-            }
+}
 
-        }
-
-    </style>
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION MENU -->
-    <nav class="menu">
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<!-- ===== NAVIGATION ===== -->
+<nav class="menu">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-    <!-- CONTACT CONTENT -->
-    <section class="contact-section">
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact-section">
 
-        <h1>Contact Me</h1>
+    <h1>Contact Me</h1>
 
-        <p class="contact-subtitle">
-            Let's stay connected! You can find me on my social media accounts.
-        </p>
+    <p class="contact-subtitle">
+        Let's stay connected! You can find me through my contact information.
+    </p>
 
-        <div class="contact-container">
+    <div class="contact-container">
 
-            <!-- INSTAGRAM -->
-            <div class="instagram-card">
+        <!-- INSTAGRAM WITH PICTURE -->
+        <div class="contact-card">
 
-                <h2>Instagram</h2>
-                <p>Follow me on Instagram</p>
+            <h2>Instagram</h2>
 
-                <img src="instagram.jpg"
-                     alt="Instagram profile"
-                     class="profile-picture">
+            <p>Follow me on Instagram</p>
 
-                <h3>Joselyn Dagcuta</h3>
-                <p>@dagcutajoselyn</p>
+            <img src="instagram.jpg"
+                 alt="Instagram profile">
 
-                <a href="https://www.instagram.com/dagcutajoselyn/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="instagram-btn">
-                    Visit Instagram
-                </a>
+            <h3>Joselyn Dagcuta</h3>
 
-            </div>
+            <p>@dagcutajoselyn</p>
 
-            <!-- FACEBOOK -->
-            <div class="facebook-card">
+            <a href="https://www.instagram.com/dagcutajoselyn/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-btn instagram-btn">
+                Visit Instagram
+            </a>
 
-                <h2>Facebook</h2>
-                <p>Connect with me on Facebook</p>
+        </div>
 
-                <img src="facebook.jpg"
-                     alt="Facebook profile"
-                     class="profile-picture">
+        <!-- FACEBOOK WITH PICTURE -->
+        <div class="contact-card">
 
-                <h3>Joselyn Dagcuta</h3>
-                <p>Personal Facebook Account</p>
+            <h2>Facebook</h2>
+
+            <p>Connect with me on Facebook</p>
+
+            <img src="facebook.jpg"
+                 alt="Facebook profile">
+
+            <h3>Joselyn Dagcuta</h3>
+
+            <p>Personal Facebook Account</p>
+
+            <a href="https://www.facebook.com/profile.php?id=61576512509551"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-btn facebook-btn">
+                Visit Facebook
+            </a>
+
+        </div>
+
+        <!-- PHONE NUMBER WITHOUT PICTURE -->
+        <div class="contact-card">
+
+            <h2>Phone Number</h2>
+
+            <p>You can reach me through my phone number.</p>
+
+            <h3>09309726839</h3>
+
+            <a href="tel:09309726839"
+               class="contact-btn phone-btn">
+                Call Me
+            </a>
+
+        </div>
+
+        <!-- ADDRESS WITHOUT PICTURE -->
+        <div class="contact-card">
+
+            <h2>My Address</h2>
+
+            <p>My home address</p>
+
+            <h3>B13 L9 PTC South Sub</h3>
+
+            <p>Carsadang Bago 2</p>
+
+            <a href="https://www.google.com/maps/search/?api=1&query=PTC+South+Sub+Carsadang+Bago+2"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-btn address-btn">
+                View Location
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-info">
+
+            <h2>Stay Connected!</h2>
+
+            <p>
+                Thank you for visiting my personal website.
+                Feel free to connect with me through my social
+                media accounts. Your support is appreciated!
+            </p>
+
+        </div>
+
+        <div class="footer-socials">
+
+            <h2>My Socials</h2>
+
+            <div class="social-links">
 
                 <a href="https://www.facebook.com/profile.php?id=61576512509551"
                    target="_blank"
-                   rel="noopener noreferrer"
-                   class="facebook-btn">
-                    Visit Facebook
-                </a>
+                   rel="noopener noreferrer">f</a>
+
+                <a href="https://www.instagram.com/dagcutajoselyn/"
+                   target="_blank"
+                   rel="noopener noreferrer">◎</a>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- FOOTER WITHOUT BACKGROUND BLOCK -->
-    <footer class="footer">
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
 
-        <div class="footer-container">
+        <p>© 2026 EFN Corporation. All Rights Reserved.</p>
 
-            <!-- STAY CONNECTED -->
-            <div class="footer-info">
-                <h2>Stay Connected!</h2>
+    </div>
 
-                <p>
-                    Thank you for visiting my portfolio.
-                    Connect and contact with me through my social
-                    media accounts. Your support and feedback
-                    are appreciated!
-                </p>
-            </div>
-
-            <!-- MY SOCIALS -->
-            <div class="footer-socials">
-                <h2>My Socials</h2>
-
-                <div class="social-links">
-
-                    <a href="https://www.facebook.com/profile.php?id=61576512509551"
-                       target="_blank"
-                       rel="noopener noreferrer">f</a>
-
-                    <a href="https://www.instagram.com/dagcutajoselyn/"
-                       target="_blank"
-                       rel="noopener noreferrer">◎</a>
-
-                </div>
-            </div>
-
-        </div>
-
-        <!-- COPYRIGHT -->
-        <div class="footer-bottom">
-            <p>© 2026 EFN Corporation. All Rights Reserved.</p>
-        </div>
-
-    </footer>
+</footer>
 
 </body>
 </html>
-
